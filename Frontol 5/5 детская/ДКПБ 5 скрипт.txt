@@ -1,0 +1,378 @@
+var oplata_string="Бесплатно\nПлатно";
+var oplata_val="Б/П\nП";
+
+var vydano_string="БУЗ УР ДГП №9 МЗ УР\nБУЗ УР ГКБ №7 МЗ УР\nБУЗ УР ГКБ №6 МЗ УР\nБУЗ УР ГКБ №8 МЗ УР\nБУЗ УР ДГКП №8 МЗ УР\nБУЗ УР ГКБ №6 МЗ УР ДП 2\nБУЗ УР ГП №5 МЗ УР\nБУЗ УР ДГП №1\nБУЗ УР ДГКП №2 МЗ УР\nБУЗ УР ГБ №3 МЗ УР\nБУЗ УР ДГКП №5 МЗ УР\nБУЗ УР ДГП №6 МЗ УР";
+var vydano_val="БУЗ УР ДГП №9 МЗ УР\nБУЗ УР ГКБ №7 МЗ УР\nБУЗ УР ГКБ №6 МЗ УР\nБУЗ УР ГКБ №8 МЗ УР\nБУЗ УР ДГКП №8 МЗ УР\nБУЗ УР ГКБ №6 МЗ УР ДП 2\nБУЗ УР ГП №5 МЗ УР\nБУЗ УР ДГП №1\nБУЗ УР ДГКП №2 МЗ УР\nБУЗ УР ГБ №3 МЗ УР\nБУЗ УР ДГКП №5 МЗ УР\nБУЗ УР ДГП №6 МЗ УР";
+
+var vydacha_string="БУММАШЕВСКАЯ 96 (ГКБ 7)\nГОРЬКОГО 57\nВОСТОЧНАЯ 26\n30 ЛЕТ ПОБЕДЫ 5А (ДГП 9)\nБАРАНОВА 48 (ДГП 6)\n40 ЛЕТ ПОБЕДЫ 70А (ДГКП 8)\nКОРОТКОВА 7А (ГП 5)\nТРУДА 54\nРЕПИНА 35 (ГКБ 8)\nХОЛМОГОРОВА 43 (ДГП 9)";
+var vydacha_val="БУММАШЕВСКАЯ 96 (ГКБ 7)\nГОРЬКОГО 57\nВОСТОЧНАЯ 26\n30 ЛЕТ ПОБЕДЫ 5А (ДГП 9)\nБАРАНОВА 48 (ДГП 6)\n40 ЛЕТ ПОБЕДЫ 70А (ДГКП 8)\nКОРОТКОВА 7А (ГП 5)\nТРУДА 54\nРЕПИНА 35 (ГКБ 8)\nХОЛМОГОРОВА 43(ДГП 9)";
+
+var Connection;
+var ConnectionString = "DRIVER=Firebird/InterBase(r) driver; DBNAME=localhost:C:\\DB\\ДКПБ 5 Frontol 5\\DB дкпб\\5.15\\MAIN.GDB;UID=sysdba;PWD=masterkey; CHARSET=WIN1251";
+var TableName = "ChildrenClinic";
+var GeneratorName = "AutoIncrementChildrenClinic";
+var LogFileName = "C:\\Users\\Максим\\Desktop\\Фронтолы\\Log.log";
+var FileStream;
+
+function init()
+{
+ 	frontol.addEventListener("openDocument","opendoc",false); // к событию openDocument привязать opendoc
+ 	frontol.addEventListener("addPayment","before_payment", true); // к событию addPayment привязать before_payment
+ 	frontol.addEventListener("addPosition", "afterposition", false);
+ 	frontol.addEventListener("closeDocument", "WriteRecordToBaseOnCloseDocument", true); // перед закрытием документа, добавление записей в базу
+
+ 	FileStream = OpenFile(LogFileName);
+
+ 	CreateSqlConnection(ConnectionString);
+
+ 	try
+ 	{
+ 		CreateTable(TableName, "ID int NOT NULL, Ware varchar(50), \"Count\" int, ClinicName varchar(100), GiveOutPlaceName varchar(100), BeginDate Date, EndDate Date, DocumentNumber int, PRIMARY KEY (ID)");
+ 	}
+	catch(exception)
+	{
+		WriteLog(FileStream, "Таблица " + TableName + "не создана. Произошла ошибка при создании таблицы или она была ранее создана. Текст исключения: " + exception.stack + ": " + exception.message);
+	} // если таблица создана, то ничего не делать
+
+	try
+	{
+		CreateGenerator(GeneratorName);	
+	}
+	catch(exception)
+	{
+		WriteLog(FileStream, "Генератор " + GeneratorName + "не создан. Произошла ошибка при создании генератора или он была ранее создан. Текст исключения: " + exception.stack + ": " + exception.message);
+	} // если генератор создан, то ничего не делать
+	
+	CloseSqlConnection();
+
+	WriteLog(FileStream, "Фронтол запущен.");
+
+	//Шаблон добавления записей.
+	//CreateSqlConnection(ConnectionString);
+	//AddNewRecordToTable(TableName, GeneratorName, "1", 1, "1", "1", "01.04.2018", "01.04.2018");
+	//CloseSqlConnection();
+}
+
+
+function opendoc() // вызывается при открытии документа
+{
+	vvod(0); // вызвать окна ввода полей чека.
+}
+
+function before_payment() // вызывается при вводе оплаты
+{
+	 if (frontol.currentDocument.client.name=="") // если клиент не выбран
+	 {
+	    frontol.actions.showMessage("Укажите клиента", Icon.Error); // вывести ошибку
+	    frontol.actions.cancel();
+	};
+	vvod(1);
+}
+
+function vvod(nomusthave) // nomusthave = 0 или 1
+{
+	frontol.currentDocument.userValues.set("BirthDate", frontol.currentDocument.client.birthDate); // в реквизит чека ввести дату рождения из карточки клиента
+	tmp = frontol.currentDocument.userValues.get("TypeDoc"); // получить тип документа
+
+	if ((tmp=="")||(nomusthave!=1)) // если тип документа не получен или nomusthave = 0
+	{
+		tmp = select("Укажите оплату",oplata_string, oplata_val); // вывести сообщение с полями ввода
+		frontol.currentDocument.userValues.set("TypeDoc", tmp); // назничить реквизит тип документа
+		for (frontol.currentDocument.position.index = 1; // цикл по всему чеку
+			frontol.currentDocument.position.index <= frontol.currentDocument.position.count;
+			frontol.currentDocument.position.index++)
+		{
+			afterposition(frontol.currentDocument.position); // 
+		}
+	}
+
+	tmp = frontol.currentDocument.userValues.get("Vydano"); // считать реквизит место выдачи 
+	if ((tmp=="")||(nomusthave!=1)) // если реквизит не получен или nomusthave != 1
+	{
+		tmp = select("Укажие место выдачи рецепта", vydano_string, vydano_val); // вывести сообщение с полями ввода
+		frontol.currentDocument.userValues.set("Vydano", tmp); // назначить реквизит место выдачи 
+	}
+
+	tmp = frontol.currentDocument.userValues.get("Vydacha"); // считать реквизит точку выдачи продукции 
+	if ((tmp=="")||(nomusthave!=1)) // если точка выдачи не найдена
+	{
+		tmp = select("Укажие точку выдачи продукции",vydacha_string,vydacha_val); // вывести сообщение с полями ввода
+		frontol.currentDocument.userValues.set("Vydacha", tmp); // назначить реквизит точка выдачи
+	}
+
+
+	begDateStr = frontol.currentDocument.userValues.get("Nachalo"); // начало срока заказа
+	if ((begDateStr == "") || (nomusthave != 1)) // если не найден
+	{
+		begDateStr = InputDate("Срок заказа, НАЧАЛО");
+		frontol.currentDocument.userValues.set("Nachalo", begDateStr); // ввести начало срока заказа
+	}
+
+	endDateStr = frontol.currentDocument.userValues.get("Konec"); // считать конец срока заказа
+	if ((endDateStr == "") || (nomusthave != 1))
+	{
+		endDateStr = InputDate("Срок заказа, КОНЕЦ");
+		frontol.currentDocument.userValues.set("Konec", endDateStr); // ввести конец срока заказа
+	}
+}
+
+//не используется
+function ParseDate(dateString)
+{
+	return new Date(Number(dateString[6] + dateString[7] + dateString[8] + dateString[9]), Number(dateString[3] + dateString[4]) - 1,
+			Number(dateString[0] + dateString[1]));
+}
+
+function InputDate(caption)
+{
+	DatePicker = new ActiveXObject("DateTimePicker.Main");
+	var result;
+
+	do
+	{
+		DatePicker.Show(caption);
+		result = DatePicker.GetDateString();
+	}
+	while(result == "01.01.2000");
+
+   	return result;
+}
+
+function select(input_caption, strings, vals) //  вывод сообщения со списком для выбора
+{
+ 	do // выполнять пока ошибка
+ 	{
+  		inputError = false; // флаг ошибки
+		inputText = frontol.actions.selectString(input_caption, strings, vals);//запрос данных с помощью диалога ввода
+		defaultText = inputText;
+
+		if (inputText == null || inputText == "") //если пользователь нажал «Отмена» или ввел пустую строку,
+		{
+		   	inputError = true; // ошибка
+		   	defaultText = "";
+		   	frontol.actions.showMessage("Вы не ввели значение!", Icon.Exclamation); //выводится сообщение об ошибке
+		}
+		//повторяется запрос данных, пока не будет введенно корректное значение
+	}
+	while (inputError);
+	//введенные данные преобразуются к числовому виду для дальнейшего использования
+	return inputText; // вернуть введенный текст
+}
+
+function vvod_text(input_caption, defaultText) // вывод поля для ввода
+{
+	do // выполнять пока ошибка
+	{
+		inputError = false; 
+		  //запрос данных с помощью диалога ввода
+		inputText = frontol.actions.inputString(input_caption, defaultText, 10); 
+		defaultText = inputText;
+
+		if (inputText == null || inputText == "") //если пользователь нажал «Отмена» или ввел пустую строку,
+		{
+			inputError = true; // ошибка
+			defaultText = "";
+			frontol.actions.showMessage("Вы не ввели значение!", Icon.Exclamation); // вывести ошибку
+		}
+	}
+	while (inputError);
+	//введенные данные преобразуются к числовому виду для дальнейшего использования
+	return inputText; // вернуть введенное значение
+}
+
+function afterposition(position) // при вводе позиции
+{
+	if (position.ware.description != "тара") // если описание не тара
+	{
+	    frontol.currentDocument.position.index = frontol.currentDocument.position.count; // 
+	   	if (frontol.currentDocument.userValues.get("TypeDoc")=="Б/П") // если тип документа бесплатный
+	       	position.setSpecialPrice(0,0); // назначить цену 0
+	   	else
+	       	position.setSpecialPrice(position.ware.price,0); // иначе назначить цену из карточки товара
+	}
+}
+
+function AddNewRecordToTable(tableName, generatorName, record) 
+{
+	var result;
+	result  = CreateSqlCommand("INSERT INTO " + tableName + " VALUES (" + GetScalarOneFieldValue(UpdateGeneratorValue(generatorName)) + 
+		",\'" + record.ware + "\'" + "," + record.count + ",\'" + record.clinic + "\'" + ",\'" + record.giveOutPlace + "\'" + 
+		",\'" + record.beginDate + "\'" + ",\'" + record.endDate + "\'" + ",\'" + record.documentNumber + "\'" +")");
+	return result;
+}
+
+function GetScalarOneFieldValue(dataSet)
+{
+	return dataSet.Fields(0).Value; 
+}
+
+function CreateGenerator(generatorName)
+{
+	return Connection.Execute("CREATE GENERATOR " + generatorName);
+}
+
+function UpdateGeneratorValue(generatorName)
+{
+	return CreateSqlCommand("SELECT GEN_ID(" + generatorName + ", 1) FROM RDB$DATABASE");
+}
+
+function DecrementGeneratorValue(generatorName)
+{
+	return CreateSqlCommand("SELECT GEN_ID(" + generatorName + ", -1) FROM RDB$DATABASE");
+}
+
+function CreateTable(tableName, tableFields)
+{
+	return Connection.Execute("CREATE TABLE " + tableName + "(" + tableFields + ")");
+}
+
+function CreateSqlErrorsString()
+{
+	var result = "";
+	try
+	{
+		for (var i = 0; i < Connection.Errors.length; i++) 
+		{
+			result += "№" + i + " Ошибка: " + Connection.Errors[i].nativeError + " - " + Connection.Errors[i].Description + " в строке " + Connection.Errors[i].Source + ".";
+		}
+	}
+	catch(exception)
+	{
+	}
+	
+	return result;
+}
+
+function CreateSqlConnection(connectionString) 
+{
+	try
+	{
+		Connection = new ActiveXObject("ADODB.Connection");
+		Connection.Open(connectionString);
+	 	Connection.BeginTrans(); // НАЧАТЬ ТРАНЗАКЦИЮ
+	 	WriteLog(FileStream, "Соединение с базой данных успешно установлено.");
+	}
+	catch(exception)
+	{
+		WriteLog(FileStream, "Соединение с базой данных не установлено. " + CreateSqlErrorsString());
+	}	
+ }
+
+ function CreateSqlCommand(sqlQueryText)
+ {
+ 	var result = null;
+ 	try
+ 	{
+		result = Connection.Execute(sqlQueryText);
+		WriteLog(FileStream, "SQL инструкция:\"" + sqlQueryText + "\" успешно выполнена.");
+		return result;
+ 	}
+ 	catch(exception)
+ 	{
+ 		frontol.actions.showMessage("Ошибка при выполнении SQL инструкции.");
+ 		WriteLog(FileStream, "Ошибка при выполнении SQL инструкции:\"" + sqlQueryText + "\". Текст исключения: " + exception.stack + ": " + exception.message + " " + CreateSqlErrorsString());
+		return null;
+ 	}
+ }
+
+ function CloseSqlConnection()
+ {
+ 	try
+ 	{
+ 		Connection.CommitTrans();
+ 		Connection.Close();
+ 		WriteLog(FileStream, "Соединение с базой данных успешно закрыто.");
+ 	}
+ 	catch(exception)
+ 	{
+ 		WriteLog(FileStream, "Ошибка при закрытии соединения с базой данных. Текст исключения: " +  exception.stack + ": " + exception.message + " " + CreateSqlErrorsString());
+ 	}
+ }
+
+ function TableRecord() // класс записи
+ {
+ 	this.ware = "";
+ 	this.count = 0;
+ 	this.clinic = "";
+ 	this.giveOutPlace = "";
+ 	this.beginDate = "01.01.2000";
+ 	this.endDate = "01.01.2000";
+ 	this.documentNumber = 0;
+ }
+
+ function WriteRecordToBaseOnCloseDocument()
+ {
+ 	//frontol.actions.showMessage("запись элементов в базу.");
+	 	CreateSqlConnection(ConnectionString);
+	 	for (frontol.currentDocument.position.index = 1; // цикл по всему чеку
+			frontol.currentDocument.position.index <= frontol.currentDocument.position.count;
+			frontol.currentDocument.position.index++)
+		{
+			if(frontol.currentDocument.position.ware.description != "тара")
+			{
+				record = new TableRecord();
+				record.ware = frontol.currentDocument.position.ware.name;
+				record.count = frontol.currentDocument.position.quantity;
+				record.clinic = frontol.currentDocument.userValues.get("Vydano");
+				record.giveOutPlace = frontol.currentDocument.userValues.get("Vydacha");
+				record.beginDate = frontol.currentDocument.userValues.get("Nachalo");
+				record.endDate = frontol.currentDocument.userValues.get("Konec");
+				record.documentNumber = frontol.currentDocument.number;
+				try
+				{
+					if(AddNewRecordToTable(TableName, GeneratorName, record) != null)
+					{
+						WriteLog(FileStream, "Добавлена новая запись в базу: ware:" + record.ware + " count:" + record.count + " clinic:" + 
+						record.clinic + " giveOutPlace:" + record.giveOutPlace + " beginDate:" + record.beginDate + " endDate:" + record.endDate);
+					}
+					else
+					{
+						WriteLog(FileStream, "Ошибка при добавлении новой записи. Ошибки SQL: " + CreateSqlErrorsString() + " Текст исключения:" + exception.stack + ": " + exception.message);
+						frontol.actions.showError("Ошибка при закрытии чека. Закрытие чека будет отменено.");
+					}
+
+				}
+				catch(exception)
+				{
+					WriteLog(FileStream, "Ошибка при добавлении новой записи. Ошибки SQL: " + CreateSqlErrorsString() + " Текст исключения:" + exception.stack + ": " + exception.message);
+					frontol.actions.showError("Ошибка при закрытии чека. Закрытие чека будет отменено.");
+				}
+			}
+			
+		}
+	
+		CloseSqlConnection();
+}
+
+function OpenFile(fileName)
+{
+	try
+	{
+		fileDriver = new ActiveXObject("Scripting.FileSystemObject");
+		return fileDriver.OpenTextFile(fileName, 8, true);
+	}
+	catch(exception)
+	{
+		frontol.actions.showMessage("Не удалось создать или открыть файл лога.");
+	}
+}
+
+function WriteLog(fileStream, log)
+{
+	var now = new Date();
+	if(fileStream != null)
+	{
+		fileStream.WriteLine(GetFormattedDateTime(now) + ":" + log);
+	}
+}
+
+function GetFormattedDateTime(date)
+{
+	return date.getDate() + "." + date.getMonth() + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+}
+
+//функция не используется
+function CloseFile(fileStream)
+{
+	fileStream.Close();
+}

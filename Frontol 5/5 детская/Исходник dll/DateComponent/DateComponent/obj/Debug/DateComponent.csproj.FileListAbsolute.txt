@@ -1,0 +1,9 @@
+C:\Users\Максим\source\repos\DateComponent\DateComponent\bin\Debug\DateComponent.dll
+C:\Users\Максим\source\repos\DateComponent\DateComponent\bin\Debug\DateComponent.pdb
+C:\Users\Максим\source\repos\DateComponent\DateComponent\bin\Debug\DateComponent.tlb
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.csprojAssemblyReference.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.MainForm.resources
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.csproj.GenerateResource.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.csproj.CoreCompileInputs.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.dll
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Debug\DateComponent.pdb

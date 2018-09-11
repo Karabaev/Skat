@@ -1,0 +1,8 @@
+C:\Users\Максим\source\repos\DateComponent\DateComponent\bin\Release\DateComponent.dll
+C:\Users\Максим\source\repos\DateComponent\DateComponent\bin\Release\DateComponent.pdb
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.csprojAssemblyReference.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.MainForm.resources
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.csproj.GenerateResource.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.csproj.CoreCompileInputs.cache
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.dll
+C:\Users\Максим\source\repos\DateComponent\DateComponent\obj\Release\DateComponent.pdb

@@ -1,0 +1,12 @@
+http://blog.atol.ru/archives/2804 тут есть ссылка на скачивание драйвера ODBC. Его надо скачать и установить.
+Зарегистрировать DateComponent.dll как COM компонент. C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe "C:\Users\UserName\Documents\Visual Studio 2008\Projects\HowToComObjectFor1C\HowToComObjectFor1C\bin\Release\HowToComObjectFor1C.dll" /codebase
+Имя класса DateTimePicker.Main. Для этого возможно придется установить .net
+Пример использования.
+	DatePicker = new ActiveXObject("DateTimePicker.Main");
+   	DatePicker.Show(caption);
+	DatePicker.GetDateString(); // вернет дату в виде строки.
+
+
+Загрузить скрипт из файла ДКПБ 5 скрипт.txt в сценарии.
+Изменить в скрипте путь до базы.
+Импортировать отчеты.
