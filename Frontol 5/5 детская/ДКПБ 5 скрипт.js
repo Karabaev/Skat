@@ -13,6 +13,7 @@ var TableName = "ChildrenClinic";
 var GeneratorName = "AutoIncrementChildrenClinic";
 var LogFileName = "C:\\Users\\Максим\\Desktop\\Фронтолы\\Log.log";
 var FileStream;
+var DocumentWithoutDBWrite = "ПРОДАЖА УПРОЩЕННАЯ";
 
 function init()
 {
@@ -302,7 +303,8 @@ function CreateSqlConnection(connectionString)
 
  function WriteRecordToBaseOnCloseDocument()
  {
- 	//frontol.actions.showMessage("запись элементов в базу.");
+ 	if(frontol.currentDocument.type.name != DocumentWithoutDBWrite)
+ 	{
 	 	CreateSqlConnection(ConnectionString);
 	 	for (frontol.currentDocument.position.index = 1; // цикл по всему чеку
 			frontol.currentDocument.position.index <= frontol.currentDocument.position.count;
@@ -338,10 +340,13 @@ function CreateSqlConnection(connectionString)
 					frontol.actions.showError("Ошибка при закрытии чека. Закрытие чека будет отменено.");
 				}
 			}
-			
 		}
-	
 		CloseSqlConnection();
+	}
+	else
+	{
+		WriteLog(FileStream, "Чек №" + frontol.currentDocument.number + " проведен без записи в базу.");
+	}
 }
 
 function OpenFile(fileName)
