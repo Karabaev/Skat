@@ -1,0 +1,16 @@
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPGui.csprojAssemblyReference.cache
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPDownloader.PresentationLayer.MainForm.resources
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPDownloader.PresentationLayer.SettingsForm.resources
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPDownloader.Properties.Resources.resources
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPGui.csproj.GenerateResource.cache
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPGui.csproj.CoreCompileInputs.cache
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPDownloader.exe
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPDownloader.pdb
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\FTPDownloader.exe.config
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\FTPDownloader.exe
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\FTPDownloader.pdb
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\ArxOne.Ftp.dll
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\Newtonsoft.Json.dll
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\ArxOne.Ftp.xml
+C:\Доработки\EDIHelper\FTPDownloader\bin\Debug\Newtonsoft.Json.xml
+C:\Доработки\EDIHelper\FTPDownloader\obj\Debug\FTPGui.csproj.CopyComplete

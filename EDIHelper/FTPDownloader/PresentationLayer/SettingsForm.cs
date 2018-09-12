@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FTPDownloader.PresentationLayer
 {
@@ -26,8 +27,10 @@ namespace FTPDownloader.PresentationLayer
         /// <param name="e"></param>
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            DataFileTxt.Text = SettingsContainer.Settings.DataFileName;
-            LogFileTxt.Text = SettingsContainer.Settings.LogFileName;
+            DataFileTxt.Text = SettingsContainer.Settings.DataFilePath;
+            LogFileTxt.Text = SettingsContainer.Settings.LogFilePath;
+            ServiceLogFileTxt.Text = SettingsContainer.Settings.ServiceLogFilePath;
+            WBFolderTxt.Text = SettingsContainer.Settings.WayBillsFtpPath;
         }
 
         /// <summary>
@@ -39,8 +42,8 @@ namespace FTPDownloader.PresentationLayer
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                SettingsContainer.Settings.DataFileName = openFileDialog1.FileName;
-                DataFileTxt.Text = SettingsContainer.Settings.DataFileName;
+                SettingsContainer.Settings.DataFilePath = Path.GetFullPath(openFileDialog1.FileName);
+                DataFileTxt.Text = SettingsContainer.Settings.DataFilePath;
             }
         }
 
@@ -53,8 +56,8 @@ namespace FTPDownloader.PresentationLayer
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                SettingsContainer.Settings.LogFileName = openFileDialog1.FileName;
-                LogFileTxt.Text = SettingsContainer.Settings.LogFileName;
+                SettingsContainer.Settings.LogFilePath = Path.GetFullPath(openFileDialog1.FileName);
+                LogFileTxt.Text = SettingsContainer.Settings.LogFilePath;
             }
         }
 
@@ -65,8 +68,11 @@ namespace FTPDownloader.PresentationLayer
         /// <param name="e"></param>
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            SettingsContainer.Settings.DataFileName = DataFileTxt.Text;
-            SettingsContainer.Settings.LogFileName = LogFileTxt.Text;
+            SettingsContainer.Settings.DataFilePath = DataFileTxt.Text;
+            SettingsContainer.Settings.LogFilePath = LogFileTxt.Text;
+            SettingsContainer.Settings.ServiceLogFilePath = ServiceLogFileTxt.Text;
+            SettingsContainer.Settings.WayBillsFtpPath = WBFolderTxt.Text;
+            SettingsContainer.Save();
             this.Close();
         }
     }

@@ -36,13 +36,17 @@
             this.ChangeDataFileBtn = new System.Windows.Forms.Button();
             this.ChangeLogFileBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ServiceLogFileTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.WBFolderTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(399, 86);
+            this.CloseBtn.Location = new System.Drawing.Point(426, 154);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(75, 23);
+            this.CloseBtn.Size = new System.Drawing.Size(52, 23);
             this.CloseBtn.TabIndex = 0;
             this.CloseBtn.Text = "Close";
             this.CloseBtn.UseVisualStyleBackColor = true;
@@ -82,9 +86,9 @@
             // 
             // ChangeDataFileBtn
             // 
-            this.ChangeDataFileBtn.Location = new System.Drawing.Point(399, 4);
+            this.ChangeDataFileBtn.Location = new System.Drawing.Point(401, 4);
             this.ChangeDataFileBtn.Name = "ChangeDataFileBtn";
-            this.ChangeDataFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.ChangeDataFileBtn.Size = new System.Drawing.Size(52, 23);
             this.ChangeDataFileBtn.TabIndex = 5;
             this.ChangeDataFileBtn.Text = "Change";
             this.ChangeDataFileBtn.UseVisualStyleBackColor = true;
@@ -92,23 +96,55 @@
             // 
             // ChangeLogFileBtn
             // 
-            this.ChangeLogFileBtn.Location = new System.Drawing.Point(399, 37);
+            this.ChangeLogFileBtn.Location = new System.Drawing.Point(401, 37);
             this.ChangeLogFileBtn.Name = "ChangeLogFileBtn";
-            this.ChangeLogFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.ChangeLogFileBtn.Size = new System.Drawing.Size(52, 23);
             this.ChangeLogFileBtn.TabIndex = 6;
             this.ChangeLogFileBtn.Text = "Change";
             this.ChangeLogFileBtn.UseVisualStyleBackColor = true;
             this.ChangeLogFileBtn.Click += new System.EventHandler(this.ChangeLogFileBtn_Click);
             // 
-            // openFileDialog1
+            // ServiceLogFileTxt
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.ServiceLogFileTxt.Location = new System.Drawing.Point(97, 69);
+            this.ServiceLogFileTxt.Name = "ServiceLogFileTxt";
+            this.ServiceLogFileTxt.Size = new System.Drawing.Size(282, 20);
+            this.ServiceLogFileTxt.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Service log file:";
+            // 
+            // WBFolderTxt
+            // 
+            this.WBFolderTxt.Location = new System.Drawing.Point(129, 105);
+            this.WBFolderTxt.Name = "WBFolderTxt";
+            this.WBFolderTxt.Size = new System.Drawing.Size(250, 20);
+            this.WBFolderTxt.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Waybill folder on FTP:";
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 126);
+            this.ClientSize = new System.Drawing.Size(490, 189);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.WBFolderTxt);
+            this.Controls.Add(this.ServiceLogFileTxt);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ChangeLogFileBtn);
             this.Controls.Add(this.ChangeDataFileBtn);
             this.Controls.Add(this.LogFileTxt);
@@ -134,5 +170,9 @@
         private System.Windows.Forms.Button ChangeDataFileBtn;
         private System.Windows.Forms.Button ChangeLogFileBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox ServiceLogFileTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox WBFolderTxt;
+        private System.Windows.Forms.Label label4;
     }
 }

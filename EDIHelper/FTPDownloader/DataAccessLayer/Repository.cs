@@ -73,31 +73,31 @@
         {
             try
             {
-                using (FileStream stream = File.OpenRead(SettingsContainer.Settings.DataFileName))
-                {
-                    byte[] byteArray = new byte[stream.Length];
-                    stream.Read(byteArray, 0, byteArray.Length);
-                    this.jsonData = Encoding.Default.GetString(byteArray);
-                    this.AccessDataList = JsonConvert.DeserializeObject<List<FTPAccessData>>(jsonData);
-                    if (this.AccessDataList.Any())
-                    {
-                        LastID = this.AccessDataList.Last().ID;
-                    }
-                    else
-                    {
-                        LastID = 0;
-                    }
-
-                    this.logger.WriteLog(string.Format("{0} records are loaded", this.AccessDataList?.Count));
-                    return true;
-                }
+                this.AccessDataList = JsonConvert.DeserializeObject<List<FTPAccessData>>(File.ReadAllText(SettingsContainer.Settings.DataFileFullName));
+                this.logger.WriteLog("All data was loaded.");
             }
-            catch(IOException ex)
+            catch(FileNotFoundException ex)
             {
-                this.logger.WriteLog(ex.StackTrace, LogTypes.ERROR);
-                this.logger.WriteLog(ex.Message, LogTypes.ERROR);
-                return false;
+                this.logger.WriteLog(ex.StackTrace);
+                this.logger.WriteLog(ex.Message);
+                this.AccessDataList = new List<FTPAccessData>();
+                this.SaveChanges();
             }
+            catch(IOException ex1)
+            {
+                this.logger.WriteLog(ex1.StackTrace, LogTypes.ERROR);
+                this.logger.WriteLog(ex1.Message, LogTypes.ERROR);
+                this.AccessDataList = null;
+            }
+            catch(JsonException ex2)
+            {
+                this.logger.WriteLog(ex2.StackTrace);
+                this.logger.WriteLog(ex2.Message);
+                this.AccessDataList = new List<FTPAccessData>();
+                this.SaveChanges();
+            }
+
+            return this.AccessDataList != null;
         }
 
         /// <summary>
@@ -108,19 +108,20 @@
         {
             try
             {
-                using (FileStream stream = new FileStream(SettingsContainer.Settings.DataFileName, FileMode.Truncate))
-                {
-                    jsonData = JsonConvert.SerializeObject(AccessDataList);
-                    byte[] array = Encoding.Default.GetBytes(jsonData);
-                    stream.Write(array, 0, array.Length);
-                    this.logger.WriteLog(string.Format("All data was saved."));
-                    return true;
-                }
+                File.WriteAllText(SettingsContainer.Settings.DataFileFullName, JsonConvert.SerializeObject(this.AccessDataList));
+                this.logger.WriteLog(string.Format("All data was saved."));
+                return true;
             }
-            catch(IOException ex)
+            catch (IOException ex)
             {
                 this.logger.WriteLog(ex.StackTrace, LogTypes.ERROR);
                 this.logger.WriteLog(ex.Message, LogTypes.ERROR);
+                return false;
+            }
+            catch (JsonException ex1)
+            {
+                this.logger.WriteLog(ex1.StackTrace);
+                this.logger.WriteLog(ex1.Message);
                 return false;
             }
         }

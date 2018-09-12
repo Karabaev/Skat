@@ -3,89 +3,42 @@
     using System.Text;
     using Newtonsoft.Json;
     using System.IO;
+    using System.Collections.Generic;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Хранилище настроек.
     /// </summary>
     public static class SettingsContainer
     {
-        /// <summary>
-        /// Настройки.
-        /// </summary>
-        private static SettingProps settings;
-        /// <summary>
-        /// Стандартное имя файла логов.
-        /// </summary>
-        private static string defaultLogFileName = "Log.log";
-        /// <summary>
-        /// Стандартное имя файла данных.
-        /// </summary>
-        private static string defaultDataFileName = "Data.json";
-        /// <summary>
-        /// Стандартное имя файла настроек.
-        /// </summary>
-        private static string settingsFileName = "Settings.json";
-        /// <summary>
-        /// Логгер.
-        /// </summary>
-        private static Logger logger;
-
+        private const string SettingsFileName = "Settings.json";
         /// <summary>
         /// Инициализирует объект в памяти. Инициализирует логгер, читает настройки из файла.
         /// </summary>
         static SettingsContainer()
         {
-            Read();       
+            Load();       
         }
 
         /// <summary>
-        /// Инициализирует ссылку на логгер.
+        /// Настройки. Get - читает настройки из файла.
         /// </summary>
-        /// <param name="_logger">Логгер.</param>
-        public static void SettingsInit(Logger _logger)
-        {
-            logger = _logger;
-        }
-
-        /// <summary>
-        /// Настройки. Get - читает настройки из файла. Set - записывает настройки в файл.
-        /// </summary>
-        public static SettingProps Settings
-        {
-            get
-            {
-                if(settings == null)
-                {
-                    settings = JsonConvert.DeserializeObject<SettingProps>(Read());
-                }
-                return settings;
-            }
-            set
-            {
-                settings = value;
-                Save(JsonConvert.SerializeObject(settings));
-            }
-        }
+        public static SettingProps Settings { get; private set; }
 
         /// <summary>
         /// Записать json в файл.
         /// </summary>
-        /// <param name="json">Текст в json формате для записи в файл.</param>
         /// <returns></returns>
-        private static bool Save(string json)
+        public static bool Save()
         {
             try
             {
-                using (FileStream stream = new FileStream(settingsFileName, FileMode.OpenOrCreate))
-                {
-                    byte[] array = Encoding.Default.GetBytes(json);
-                    stream.Write(array, 0, array.Length);
-                }
+                File.WriteAllText(SettingsFileName, JsonConvert.SerializeObject(Settings));
                 return true;
             }
             catch (IOException ex)
             {
-                logger.WriteLog(string.Format("{0}, {1}", ex.StackTrace, ex.Message), LogTypes.ERROR);
+                MessageBox.Show(string.Format("{0}, {1}", ex.StackTrace, ex.Message), "Error to save settings.");
                 return false;
             }
         }
@@ -94,29 +47,24 @@
         /// Читать json из файла.
         /// </summary>
         /// <returns></returns>
-        private static string Read()
+        public static bool Load()
         {
-            FileStream stream = null;
             try
             {
-                stream = File.OpenRead(settingsFileName);
-                byte[] byteArray = new byte[stream.Length];
-                stream.Read(byteArray, 0, byteArray.Length);
-                return Encoding.Default.GetString(byteArray);
+                Settings = JsonConvert.DeserializeObject <SettingProps>(File.ReadAllText(SettingsFileName));
             }
-            catch(FileNotFoundException ex)
+            catch(FileNotFoundException)
             {
-                Save(JsonConvert.SerializeObject(new SettingProps { DataFileName = defaultDataFileName, LogFileName = defaultLogFileName }));
-                logger.WriteLog(ex.Message);
-                return string.Empty;
+                Settings = new SettingProps();
+                Save();
             }
-            finally
+            catch(IOException)
             {
-                if (stream != null)
-                {
-                    stream.Close();
-                }
+                Settings = new SettingProps();
+                Save();
             }
+
+            return Settings != null;
         }
     }
 }

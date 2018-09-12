@@ -25,7 +25,7 @@
         public MainForm()
         {
             InitializeComponent();
-            logger = new Logger();
+            logger = new Logger(SettingsContainer.Settings.LogFileFullPath);
             repository = new Repository(logger);
         }
 
@@ -47,7 +47,7 @@
         private void SettingsMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm setForm = new SettingsForm();
-            setForm.Show(this);
+            setForm.ShowDialog(this);
         }
 
         /// <summary>

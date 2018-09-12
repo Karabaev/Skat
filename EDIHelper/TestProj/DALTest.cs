@@ -13,7 +13,7 @@ namespace TestProj
     {
         public DALTest()
         {
-            logger = new Logger();
+            logger = new Logger("Log.log");
             repository = new Repository(logger);
             SettingsContainer.Settings.LogFileName = "Log.log";
             SettingsContainer.Settings.DataFileName = "Data.json";
