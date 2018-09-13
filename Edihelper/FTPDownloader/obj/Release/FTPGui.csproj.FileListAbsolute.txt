@@ -5,7 +5,6 @@ C:\Доработки\EDIHelper\FTPDownloader\bin\Release\ArxOne.Ftp.dll
 C:\Доработки\EDIHelper\FTPDownloader\bin\Release\Newtonsoft.Json.dll
 C:\Доработки\EDIHelper\FTPDownloader\bin\Release\ArxOne.Ftp.xml
 C:\Доработки\EDIHelper\FTPDownloader\bin\Release\Newtonsoft.Json.xml
-C:\Доработки\EDIHelper\FTPDownloader\obj\Release\FTPGui.csprojAssemblyReference.cache
 C:\Доработки\EDIHelper\FTPDownloader\obj\Release\FTPGui.PresentationLayer.MainForm.resources
 C:\Доработки\EDIHelper\FTPDownloader\obj\Release\FTPGui.PresentationLayer.SettingsForm.resources
 C:\Доработки\EDIHelper\FTPDownloader\obj\Release\FTPDownloader.Properties.Resources.resources
