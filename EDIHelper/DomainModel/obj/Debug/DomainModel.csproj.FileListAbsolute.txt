@@ -1,0 +1,17 @@
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\DomainModel.dll.config
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\DomainModel.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\DomainModel.pdb
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\EntityFramework.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\System.Data.SQLite.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\EntityFramework.xml
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\System.Data.SQLite.xml
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\System.Data.SQLite.dll.config
+C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
+C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.csproj.CopyComplete
+C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.dll
+C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.pdb
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\DB\DB1.db

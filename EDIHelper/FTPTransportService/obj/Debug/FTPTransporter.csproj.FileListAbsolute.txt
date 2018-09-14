@@ -1,0 +1,17 @@
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.csprojAssemblyReference.cache
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.FTPTransporter.resources
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.csproj.GenerateResource.cache
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.csproj.CoreCompileInputs.cache
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe.config
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.pdb
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPDownloader.exe
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\Newtonsoft.Json.dll
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\ArxOne.Ftp.dll
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPDownloader.pdb
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPDownloader.exe.config
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\Newtonsoft.Json.xml
+C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\ArxOne.Ftp.xml
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.csproj.CopyComplete
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.exe
+C:\Доработки\EDIHelper\FTPTransporter\obj\Debug\FTPTransporter.pdb
