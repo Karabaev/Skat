@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace DomainModel.Repository
 {
     using System.Data.Entity;
+    using System.Data.SQLite.EF6;
+    using SQLite.CodeFirst;
     using Model;
 
     public class Context : DbContext

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.SQLite;
     using System.Linq;
     using Model;
 
@@ -15,27 +14,51 @@
 
         public bool AddEntity(Client entity)
         {
-            throw new NotImplementedException();
+            this.Context.Clients.Add(entity);
+            return this.Context.SaveChanges() > 0;
         }
 
         public List<Client> GetAllEntities()
         {
-            throw new NotImplementedException();
+            List<Client> result = this.Context.Clients.ToList();
+
+            if(result == null)
+            {
+                return null;
+            }
+
+            return result;
         }
 
         public Client GetEntity(int id)
         {
-            throw new NotImplementedException();
+            Client result = this.Context.Clients.Where(c => c.ID == id).FirstOrDefault();
+            return result;
         }
 
         public bool RemoveEntity(int id)
         {
-            throw new NotImplementedException();
+            this.Context.Clients.Remove(this.Context.Clients.Where(c => c.ID == id).FirstOrDefault());
+            return this.Context.SaveChanges() > 0;
         }
 
         public bool UpdateEntity(Client entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                return false;
+            }
+
+            Client old = this.GetEntity(entity.ID);
+
+            if (old == null)
+            {
+                return false;
+            }
+
+            old.Reinitialization(entity);
+
+            return this.Context.SaveChanges() > 0;
         }
 
         public Context Context { get; set; }

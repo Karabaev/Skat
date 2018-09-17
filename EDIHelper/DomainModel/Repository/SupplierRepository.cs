@@ -17,27 +17,57 @@ namespace DomainModel.Repository
 
         public bool AddEntity(Supplier entity)
         {
-            throw new NotImplementedException();
+            this.Context.Suppliers.Add(entity);
+            return this.Context.SaveChanges() > 0;
         }
 
         public List<Supplier> GetAllEntities()
         {
-            throw new NotImplementedException();
+            List<Supplier> result = this.Context.Suppliers.ToList();
+
+            if (result == null)
+            {
+                return null;
+            }
+
+            return result;
         }
 
         public Supplier GetEntity(int id)
         {
-            throw new NotImplementedException();
+            Supplier result = this.Context.Suppliers.Where(c => c.ID == id).FirstOrDefault();
+
+            if (result == null)
+            {
+                return null;
+            }
+
+            return result;
         }
 
         public bool RemoveEntity(int id)
         {
-            throw new NotImplementedException();
+            this.Context.Suppliers.Remove(this.Context.Suppliers.Where(c => c.ID == id).FirstOrDefault());
+            return this.Context.SaveChanges() > 0;
         }
 
         public bool UpdateEntity(Supplier entity)
         {
-            throw new NotImplementedException();
+            if (entity == null)
+            {
+                return false;
+            }
+
+            Supplier old = this.GetEntity(entity.ID);
+
+            if (old == null)
+            {
+                return false;
+            }
+
+            old.Reinitialization(entity);
+
+            return this.Context.SaveChanges() > 0;
         }
 
         public Context Context { get; set; }

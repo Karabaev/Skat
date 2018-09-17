@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Model
+﻿namespace DomainModel.Model
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Supplier : ICounteragent
     {
         public int ID { get; set; }
@@ -17,7 +14,16 @@ namespace DomainModel.Model
 
         public void Reinitialization(IEntity other)
         {
-            throw new NotImplementedException();
+            if (!(other is Supplier newSupplier))
+            {
+                return;
+            }
+
+            this.Name = newSupplier.Name;
+            this.GLN = newSupplier.GLN;
+            this.INN = newSupplier.INN;
+            this.KPP = newSupplier.KPP;
+            this.IsRoaming = newSupplier.IsRoaming;
         }
 
         public override bool Equals(object other)

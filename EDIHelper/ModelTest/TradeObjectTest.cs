@@ -13,7 +13,7 @@ namespace ModelTest
         public void AddTest()
         {
             TradeObjectRepository repo = new TradeObjectRepository();
-            Assert.IsTrue(repo.AddEntity(new TradeObject { ID = 1, Address = "to1", GLN = "to1", Name = "to2" }));
+            Assert.IsTrue(repo.AddEntity(new TradeObject { ID = 1, Name = "to3", Address = "to2" , GLN = "to2", ClientID = 1 }));
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace ModelTest
         public void GetEntityTest()
         {
             TradeObjectRepository repo = new TradeObjectRepository();
-            Console.WriteLine(repo.GetEntity(2)?.ToString());
+            Console.WriteLine(repo.GetEntity(0)?.ToString());
         }
     }
 }

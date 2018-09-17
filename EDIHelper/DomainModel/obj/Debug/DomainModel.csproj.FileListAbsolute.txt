@@ -14,4 +14,6 @@ C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.csproj.CoreCom
 C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.csproj.CopyComplete
 C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.dll
 C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.pdb
-C:\Доработки\EDIHelper\DomainModel\bin\Debug\DB\DB1.db
+C:\Доработки\EDIHelper\DomainModel\obj\Debug\DomainModel.csprojAssemblyReference.cache
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\Main.db
+C:\Доработки\EDIHelper\DomainModel\bin\Debug\SQLite.CodeFirst.dll

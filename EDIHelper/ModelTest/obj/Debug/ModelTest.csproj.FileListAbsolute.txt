@@ -28,4 +28,4 @@ C:\Доработки\EDIHelper\ModelTest\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\EntityFramework.SqlServer.xml
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\System.Data.SQLite.xml
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\System.Data.SQLite.dll.config
-C:\Доработки\EDIHelper\ModelTest\bin\Debug\DB\DB1.db
+C:\Доработки\EDIHelper\ModelTest\bin\Debug\Main.db

@@ -12,10 +12,20 @@ namespace DomainModel.Model
         public string Name { get; set; }
         public string Address { get; set; }
         public string GLN { get; set; }
+        public int ClientID { get; set; }
+        public Client Client { get; set; }
 
         public void Reinitialization(IEntity other)
         {
-            throw new NotImplementedException();
+            if (!(other is TradeObject newTO))
+            {
+                return;
+            }
+
+            this.Name = newTO.Name;
+            this.Address = newTO.Address;
+            this.GLN = newTO.GLN;
+            this.ClientID = newTO.ClientID;
         }
 
         public override bool Equals(object other)
