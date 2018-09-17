@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Model
+﻿namespace DomainModel.Model
 {
-    using Repository;
+    using System;
+    using System.ComponentModel;
 
     public class Waybill : IEntity
     {
-        public Waybill(int id, string number, int supID, int clientID)
-        {
-            this.ID = id;
-            this.Number = number;
-            this.SupplierID = supID;
-            this.ClientID = clientID;
-        }
-
         public int ID { get; set; }
         public string Number { get; set; }
+        [Browsable(false)]
         public int SupplierID { get; set; }
+        [Browsable(false)]
         public int ClientID { get; set; }
         public Supplier Supplier { get; set; }
         public Client Client { get; set; }

@@ -29,3 +29,17 @@ C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.csproj.CoreCompileInputs
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.csproj.CopyComplete
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPDownloader.exe
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPDownloader.pdb
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\Main.db
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\DomainModel.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\EntityFramework.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\DomainModel.pdb
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\DomainModel.dll.config
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\EntityFramework.xml
+C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.PresentationLayer.NewMainForm.resources
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.xml
+C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.dll.config

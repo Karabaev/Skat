@@ -28,7 +28,9 @@
 
         public override bool Equals(object other)
         {
-            throw new NotImplementedException();
+            Client client = other as Client;
+
+            return client != null && this.ID == client.ID && this.Name == client.Name && this.GLN == client.GLN && this.INN == client.INN && this.KPP == client.KPP;
         }
 
         public override int GetHashCode()
@@ -38,7 +40,8 @@
 
         public override string ToString()
         {
-            return string.Format("Client ID: {0}, Name: {1}, GLN: {2}, INN: {3}, KPP: {4}", this.ID, this.Name, this.GLN, this.INN, this.KPP);
+            return string.Format("{0}, {1}", this.ID, this.Name);
+           // return string.Format("Client ID: {0}, Name: {1}, GLN: {2}, INN: {3}, KPP: {4}", this.ID, this.Name, this.GLN, this.INN, this.KPP);
         }
     }
 }

@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Model
+﻿namespace DomainModel.Model
 {
+    using System;
+    using System.ComponentModel;
+
     public class TradeObject : IEntity
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public string FtpLogin { get; set; }
+        public string FtpPassword { get; set; }
+        public string LocalFolder { get; set; }
         public string Address { get; set; }
         public string GLN { get; set; }
+        [Browsable(false)]
         public int ClientID { get; set; }
         public Client Client { get; set; }
 
@@ -23,6 +24,9 @@ namespace DomainModel.Model
             }
 
             this.Name = newTO.Name;
+            this.FtpLogin = newTO.Name;
+            this.FtpPassword = newTO.FtpPassword;
+            this.LocalFolder = newTO.LocalFolder;
             this.Address = newTO.Address;
             this.GLN = newTO.GLN;
             this.ClientID = newTO.ClientID;

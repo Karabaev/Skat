@@ -16,7 +16,7 @@ namespace FTPGui
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PresentationLayer.MainForm());
+            Application.Run(new PresentationLayer.NewMainForm());
         }
     }
 }

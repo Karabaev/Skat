@@ -1,7 +1,7 @@
 ﻿namespace DomainModel.Model
 {
     using System;
-    using System.Collections.Generic;
+    using System.ComponentModel;
 
     public class Supplier : ICounteragent
     {
@@ -10,6 +10,7 @@
         public string GLN { get; set; }
         public string INN { get; set; }
         public string KPP { get; set; }
+        [DisplayName("Roaming?")]
         public bool IsRoaming { get; set; }
 
         public void Reinitialization(IEntity other)

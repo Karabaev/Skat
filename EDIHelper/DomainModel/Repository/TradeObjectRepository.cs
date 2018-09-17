@@ -42,7 +42,7 @@ namespace DomainModel.Repository
 
             foreach (var item in result)
             {
-                item.Client = this.ClientRepository.GetAllEntities().Where(wb => wb.ID == item.ClientID).FirstOrDefault();
+              //  item.Client = this.ClientRepository.GetAllEntities().Where(wb => wb.ID == item.ClientID).FirstOrDefault();
             }
 
             return result;
