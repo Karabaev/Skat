@@ -1,39 +1,52 @@
-﻿Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+﻿Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
-Устанавливается служба FtpTransporter...
-Служба FtpTransporter успешно установлена.
-Создается исходный EventLog FtpTransporter в журнале Application...
-Выполняется фиксация сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+Устанавливается служба EDIHelperTransport...
+Служба EDIHelperTransport успешно установлена.
+Создается исходный EventLog EDIHelperTransport в журнале Application...
+Выполняется фиксация сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
-Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
-Устанавливается служба FtpTransporter...
-Создается исходный EventLog FtpTransporter в журнале Application...
-Выполняется откат для сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+Устанавливается служба EDIHelperTransport...
+Создается исходный EventLog EDIHelperTransport в журнале Application...
+Выполняется откат для сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
-Восстанавливается исходное состояние журнала событий для источника FtpTransporter.
-Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+Восстанавливается исходное состояние журнала событий для источника EDIHelperTransport.
+Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
-Устанавливается служба FtpTransporter...
-Служба FtpTransporter успешно установлена.
-Создается исходный EventLog FtpTransporter в журнале Application...
-Выполняется фиксация сборки 'C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe'.
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+Устанавливается служба EDIHelperTransport...
+Создается исходный EventLog EDIHelperTransport в журнале Application...
+Выполняется откат для сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
 Затронуты следующие параметры:
    logtoconsole = 
-   assemblypath = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.exe
-   logfile = C:\Доработки\EDIHelper\FTPTransporter\bin\Debug\FTPTransporter.InstallLog
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+Восстанавливается исходное состояние журнала событий для источника EDIHelperTransport.
+Выполняется установка сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe
+Устанавливается служба EDIHelperTransport1...
+Служба EDIHelperTransport1 успешно установлена.
+Создается исходный EventLog EDIHelperTransport1 в журнале Application...
+Выполняется фиксация сборки 'C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe'.
+Затронуты следующие параметры:
+   logtoconsole = 
+   logfile = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.InstallLog
+   assemblypath = C:\Доработки\EDIHelper\FTPTransportService\bin\Debug\FTPTransporter.exe

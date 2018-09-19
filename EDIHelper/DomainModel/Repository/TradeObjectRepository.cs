@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Repository
+﻿namespace DomainModel.Repository
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Model;
 
     public class TradeObjectRepository : IRepository<TradeObject>
@@ -24,7 +20,7 @@ namespace DomainModel.Repository
         public bool AddEntity(TradeObject entity)
         {
             this.Context.TradeObjects.Add(entity);
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         /// <summary>
@@ -38,11 +34,6 @@ namespace DomainModel.Repository
             if (result == null)
             {
                 return null;
-            }
-
-            foreach (var item in result)
-            {
-              //  item.Client = this.ClientRepository.GetAllEntities().Where(wb => wb.ID == item.ClientID).FirstOrDefault();
             }
 
             return result;
@@ -62,7 +53,6 @@ namespace DomainModel.Repository
                 return null;
             }
 
-            result.Client = this.ClientRepository.GetAllEntities().Where(to => to.ID == result.ClientID).FirstOrDefault();
             return result;
         }
 
@@ -74,7 +64,7 @@ namespace DomainModel.Repository
         public bool RemoveEntity(int id)
         {
             this.Context.TradeObjects.Remove(this.Context.TradeObjects.Where(to => to.ID == id).FirstOrDefault());
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         /// <summary>
@@ -98,6 +88,11 @@ namespace DomainModel.Repository
 
             old.Reinitialization(entity);
 
+            return this.SaveChanges();
+        }
+
+        public bool SaveChanges()
+        {
             return this.Context.SaveChanges() > 0;
         }
 

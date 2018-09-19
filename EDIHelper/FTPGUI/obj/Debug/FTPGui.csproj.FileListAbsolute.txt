@@ -21,7 +21,6 @@ C:\Доработки\EDIHelper\FTPGUI\bin\Debug\Newtonsoft.Json.dll
 C:\Доработки\EDIHelper\FTPGUI\bin\Debug\ArxOne.Ftp.xml
 C:\Доработки\EDIHelper\FTPGUI\bin\Debug\Newtonsoft.Json.xml
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.csprojAssemblyReference.cache
-C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.PresentationLayer.MainForm.resources
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.PresentationLayer.SettingsForm.resources
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPDownloader.Properties.Resources.resources
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.csproj.GenerateResource.cache

@@ -12,9 +12,8 @@
         public string LocalFolder { get; set; }
         public string Address { get; set; }
         public string GLN { get; set; }
-        [Browsable(false)]
+        [DisplayName("Client ID")]
         public int ClientID { get; set; }
-        public Client Client { get; set; }
 
         public void Reinitialization(IEntity other)
         {

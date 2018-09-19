@@ -1,7 +1,5 @@
 ﻿namespace FTPTransporter
 {
-    using FTPGui.BusinessLogicLayer;
-
     partial class FTPTransporter
     {
         /// <summary> 

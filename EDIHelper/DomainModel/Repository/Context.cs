@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Repository
+﻿namespace DomainModel.Repository
 {
     using System.Data.Entity;
-    using System.Data.SQLite.EF6;
-    using SQLite.CodeFirst;
     using Model;
 
     public class Context : DbContext
@@ -19,5 +11,6 @@ namespace DomainModel.Repository
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<TradeObject> TradeObjects { get; set; }
         public DbSet<Waybill> Waybills { get; set; }
+        public DbSet<Settings> Settings { get; set; }
     }
 }

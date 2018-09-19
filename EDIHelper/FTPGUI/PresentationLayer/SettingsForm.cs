@@ -11,7 +11,9 @@ using System.IO;
 
 namespace FTPGui.PresentationLayer
 {
-    using BusinessLogicLayer;
+    using DomainModel.Model;
+    using DomainModel.Logic;
+    //using BusinessLogicLayer;
 
     public partial class SettingsForm : Form
     {
@@ -27,41 +29,12 @@ namespace FTPGui.PresentationLayer
         /// <param name="e"></param>
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            DataFileTxt.Text = SettingsContainer.Settings.DataFilePath;
-            LogFileTxt.Text = SettingsContainer.Settings.LogFilePath;
-            ServiceLogFileTxt.Text = SettingsContainer.Settings.ServiceLogFilePath;
-            WBFolderTxt.Text = SettingsContainer.Settings.WayBillsFtpPath;
-            FtpUriTxt.Text = SettingsContainer.Settings.FtpUri;
-            IntervalTxt.Text = SettingsContainer.Settings.TransporterListenIntervalSec.ToString();
-            PassiveChk.Checked = SettingsContainer.Settings.IsPassiveFtp;
-        }
-
-        /// <summary>
-        /// Нажатие на кнопку изменить файл данных.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ChangeDataFileBtn_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                SettingsContainer.Settings.DataFilePath = Path.GetFullPath(openFileDialog1.FileName);
-                DataFileTxt.Text = SettingsContainer.Settings.DataFilePath;
-            }
-        }
-
-        /// <summary>
-        /// Нажатие на кнопку изменить файл логов.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ChangeLogFileBtn_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                SettingsContainer.Settings.LogFilePath = Path.GetFullPath(openFileDialog1.FileName);
-                LogFileTxt.Text = SettingsContainer.Settings.LogFilePath;
-            }
+            Settings settings = SettingsContainer.GetSettings();
+            WBFolderTxt.Text = settings.FtpFolder;
+            FtpUriTxt.Text = settings.FtpUri;
+            IntervalTxt.Text = settings.FtpDownloadInttervalSec.ToString();
+            PassiveChk.Checked = Convert.ToBoolean(settings.FtpIsPassive);
+            ServiceNameTxt.Text = settings.ServiceName;
         }
 
         /// <summary>
@@ -71,14 +44,15 @@ namespace FTPGui.PresentationLayer
         /// <param name="e"></param>
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            SettingsContainer.Settings.DataFilePath = DataFileTxt.Text;
-            SettingsContainer.Settings.LogFilePath = LogFileTxt.Text;
-            SettingsContainer.Settings.ServiceLogFilePath = ServiceLogFileTxt.Text;
-            SettingsContainer.Settings.WayBillsFtpPath = WBFolderTxt.Text;
-            SettingsContainer.Settings.FtpUri = FtpUriTxt.Text;
-            SettingsContainer.Settings.TransporterListenIntervalSec = int.Parse(IntervalTxt.Text);
-            SettingsContainer.Settings.IsPassiveFtp = PassiveChk.Checked;
-            SettingsContainer.Save();
+            SettingsContainer.SetSettings(new Settings
+            {
+                FtpUri = FtpUriTxt.Text,
+                FtpIsPassive = Convert.ToInt32(PassiveChk.Checked),
+                FtpDownloadInttervalSec = int.Parse(IntervalTxt.Text),
+                FtpFolder = WBFolderTxt.Text,
+                ServiceName = ServiceNameTxt.Text,
+            });
+
             this.Close();
         }
 

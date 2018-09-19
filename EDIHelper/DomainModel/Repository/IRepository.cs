@@ -17,5 +17,6 @@ namespace DomainModel.Repository
         bool RemoveEntity(int id);
         bool AddEntity(T entity);
         bool UpdateEntity(T entity);
+        bool SaveChanges();
     }
 }

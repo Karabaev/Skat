@@ -32,6 +32,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TOSaveBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.TOLocalFolderTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.TONameTxt = new System.Windows.Forms.TextBox();
             this.TradeObjectTbl = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ClientsSaveBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ClientKPPTxt = new System.Windows.Forms.TextBox();
             this.ClientRemoveBtn = new System.Windows.Forms.Button();
@@ -62,7 +64,8 @@
             this.ClientNameTxt = new System.Windows.Forms.TextBox();
             this.ClientsTbl = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.SuppliersChangeBtn = new System.Windows.Forms.Button();
+            this.SupplierRoamingChk = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.SupplierKPPTxt = new System.Windows.Forms.TextBox();
             this.SupplierRemoveBtn = new System.Windows.Forms.Button();
@@ -74,7 +77,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.SupplierNameTxt = new System.Windows.Forms.TextBox();
             this.SupplierTbl = new System.Windows.Forms.DataGridView();
-            this.SupplierRoamingChk = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.WayBillsTbl = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -83,8 +86,8 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientsTbl)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SupplierTbl)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WayBillsTbl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +126,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.TOSaveBtn);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.TOLocalFolderTxt);
             this.tabPage1.Controls.Add(this.label6);
@@ -147,6 +151,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trade objects";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // TOSaveBtn
+            // 
+            this.TOSaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TOSaveBtn.Location = new System.Drawing.Point(595, 293);
+            this.TOSaveBtn.Name = "TOSaveBtn";
+            this.TOSaveBtn.Size = new System.Drawing.Size(75, 42);
+            this.TOSaveBtn.TabIndex = 18;
+            this.TOSaveBtn.Text = "Save changes";
+            this.TOSaveBtn.UseVisualStyleBackColor = true;
+            this.TOSaveBtn.Click += new System.EventHandler(this.TOSaveBtn_Click);
             // 
             // label7
             // 
@@ -299,15 +314,12 @@
             // 
             // TradeObjectTbl
             // 
-            this.TradeObjectTbl.AllowUserToAddRows = false;
-            this.TradeObjectTbl.AllowUserToDeleteRows = false;
             this.TradeObjectTbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TradeObjectTbl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TradeObjectTbl.Location = new System.Drawing.Point(6, 6);
             this.TradeObjectTbl.Name = "TradeObjectTbl";
-            this.TradeObjectTbl.ReadOnly = true;
             this.TradeObjectTbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.TradeObjectTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TradeObjectTbl.Size = new System.Drawing.Size(583, 373);
@@ -315,6 +327,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ClientsSaveBtn);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.ClientKPPTxt);
             this.tabPage2.Controls.Add(this.ClientRemoveBtn);
@@ -333,6 +346,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Clients";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ClientsSaveBtn
+            // 
+            this.ClientsSaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClientsSaveBtn.Location = new System.Drawing.Point(598, 283);
+            this.ClientsSaveBtn.Name = "ClientsSaveBtn";
+            this.ClientsSaveBtn.Size = new System.Drawing.Size(75, 42);
+            this.ClientsSaveBtn.TabIndex = 25;
+            this.ClientsSaveBtn.Text = "Save changes";
+            this.ClientsSaveBtn.UseVisualStyleBackColor = true;
+            this.ClientsSaveBtn.Click += new System.EventHandler(this.ClientsSaveBtn_Click);
             // 
             // label8
             // 
@@ -366,7 +390,7 @@
             // ClientAddNewBtn
             // 
             this.ClientAddNewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClientAddNewBtn.Location = new System.Drawing.Point(687, 293);
+            this.ClientAddNewBtn.Location = new System.Drawing.Point(687, 174);
             this.ClientAddNewBtn.Name = "ClientAddNewBtn";
             this.ClientAddNewBtn.Size = new System.Drawing.Size(75, 23);
             this.ClientAddNewBtn.TabIndex = 21;
@@ -442,6 +466,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.SuppliersChangeBtn);
             this.tabPage3.Controls.Add(this.SupplierRoamingChk);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.SupplierKPPTxt);
@@ -462,15 +487,27 @@
             this.tabPage3.Text = "Suppliers";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // SuppliersChangeBtn
             // 
-            this.tabPage4.Controls.Add(this.WayBillsTbl);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 385);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Waybills";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.SuppliersChangeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SuppliersChangeBtn.Location = new System.Drawing.Point(598, 293);
+            this.SuppliersChangeBtn.Name = "SuppliersChangeBtn";
+            this.SuppliersChangeBtn.Size = new System.Drawing.Size(75, 42);
+            this.SuppliersChangeBtn.TabIndex = 37;
+            this.SuppliersChangeBtn.Text = "Save changes";
+            this.SuppliersChangeBtn.UseVisualStyleBackColor = true;
+            this.SuppliersChangeBtn.Click += new System.EventHandler(this.SuppliersChangeBtn_Click);
+            // 
+            // SupplierRoamingChk
+            // 
+            this.SupplierRoamingChk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SupplierRoamingChk.AutoSize = true;
+            this.SupplierRoamingChk.Location = new System.Drawing.Point(595, 174);
+            this.SupplierRoamingChk.Name = "SupplierRoamingChk";
+            this.SupplierRoamingChk.Size = new System.Drawing.Size(74, 17);
+            this.SupplierRoamingChk.TabIndex = 36;
+            this.SupplierRoamingChk.Text = "Roaming?";
+            this.SupplierRoamingChk.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -503,7 +540,7 @@
             // SupplierAddNewBtn
             // 
             this.SupplierAddNewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SupplierAddNewBtn.Location = new System.Drawing.Point(687, 293);
+            this.SupplierAddNewBtn.Location = new System.Drawing.Point(687, 198);
             this.SupplierAddNewBtn.Name = "SupplierAddNewBtn";
             this.SupplierAddNewBtn.Size = new System.Drawing.Size(75, 23);
             this.SupplierAddNewBtn.TabIndex = 32;
@@ -577,16 +614,15 @@
             this.SupplierTbl.Size = new System.Drawing.Size(583, 373);
             this.SupplierTbl.TabIndex = 25;
             // 
-            // SupplierRoamingChk
+            // tabPage4
             // 
-            this.SupplierRoamingChk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SupplierRoamingChk.AutoSize = true;
-            this.SupplierRoamingChk.Location = new System.Drawing.Point(595, 174);
-            this.SupplierRoamingChk.Name = "SupplierRoamingChk";
-            this.SupplierRoamingChk.Size = new System.Drawing.Size(74, 17);
-            this.SupplierRoamingChk.TabIndex = 36;
-            this.SupplierRoamingChk.Text = "Roaming?";
-            this.SupplierRoamingChk.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.WayBillsTbl);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(768, 385);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Waybills";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // WayBillsTbl
             // 
@@ -609,7 +645,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "NewMainForm";
-            this.Text = "NewMainForm";
+            this.Text = "General";
             this.Load += new System.EventHandler(this.NewMainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -622,8 +658,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClientsTbl)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SupplierTbl)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WayBillsTbl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -680,5 +716,8 @@
         private System.Windows.Forms.DataGridView SupplierTbl;
         private System.Windows.Forms.CheckBox SupplierRoamingChk;
         private System.Windows.Forms.DataGridView WayBillsTbl;
+        private System.Windows.Forms.Button TOSaveBtn;
+        private System.Windows.Forms.Button ClientsSaveBtn;
+        private System.Windows.Forms.Button SuppliersChangeBtn;
     }
 }

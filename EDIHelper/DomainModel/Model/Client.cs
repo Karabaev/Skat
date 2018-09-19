@@ -1,10 +1,5 @@
 ﻿namespace DomainModel.Model
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Repository;
-
     public class Client : ICounteragent
     {
         public int ID { get; set; }
@@ -41,7 +36,7 @@
         public override string ToString()
         {
             return string.Format("{0}, {1}", this.ID, this.Name);
-           // return string.Format("Client ID: {0}, Name: {1}, GLN: {2}, INN: {3}, KPP: {4}", this.ID, this.Name, this.GLN, this.INN, this.KPP);
+           // return string.Format("{0}, Name: {1}, GLN: {2}, INN: {3}, KPP: {4}", this.ID, this.Name, this.GLN, this.INN, this.KPP);
         }
     }
 }

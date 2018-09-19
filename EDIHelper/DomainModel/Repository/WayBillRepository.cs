@@ -19,7 +19,7 @@ namespace DomainModel.Repository
         public bool AddEntity(Waybill entity)
         {
             this.Context.Waybills.Add(entity);
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         public List<Waybill> GetAllEntities()
@@ -57,7 +57,7 @@ namespace DomainModel.Repository
         public bool RemoveEntity(int id)
         {
             this.Context.Waybills.Remove(this.Context.Waybills.Where(c => c.ID == id).FirstOrDefault());
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         public bool UpdateEntity(Waybill entity)
@@ -76,6 +76,11 @@ namespace DomainModel.Repository
 
             old.Reinitialization(entity);
 
+            return this.SaveChanges();
+        }
+
+        public bool SaveChanges()
+        {
             return this.Context.SaveChanges() > 0;
         }
 

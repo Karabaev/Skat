@@ -71,18 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogicLayer\FTPManager.cs" />
-    <Compile Include="BusinessLogicLayer\Logger.cs" />
-    <Compile Include="BusinessLogicLayer\SettingProps.cs" />
-    <Compile Include="BusinessLogicLayer\SettingsContainer.cs" />
-    <Compile Include="DataAccessLayer\Repository.cs" />
-    <Compile Include="BusinessLogicLayer\FTPAccessData.cs" />
-    <Compile Include="PresentationLayer\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PresentationLayer\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PresentationLayer\NewMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +83,8 @@
     <Compile Include="PresentationLayer\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\ViewModel\TradeObjectListViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PresentationLayer\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\NewMainForm.resx">
       <DependentUpon>NewMainForm.cs</DependentUpon>
     </EmbeddedResource>

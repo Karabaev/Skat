@@ -1,81 +1,107 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FTPTransporter
+﻿namespace FTPTransporter
 {
-    using FTPGui.BusinessLogicLayer;
-    using FTPGui.DataAccessLayer;
+    using System;
+    using System.ServiceProcess;
+    using System.Text;
+    using System.Timers;
+    using DomainModel.Logic;
+    using DomainModel.Model;
+    using DomainModel.Repository;
+    using System.IO;
+    using System.Diagnostics;
+    using System.Reflection;
 
+    /// <summary>
+    /// Класс службы транспорта.
+    /// </summary>
     public partial class FTPTransporter : ServiceBase
     {
-        private FTPManager ftpManager;
-        private Repository repository;
-        private Logger logger;
-        private System.Timers.Timer timer;
+        private readonly ManagerFtp FtpManager;
+        private readonly Logger Logger;
+        private readonly Timer Timer;
+        private readonly Settings Settings;
+        private readonly WayBillRepository WayBillRepository;
+        private readonly TradeObjectRepository TradeObjectRepository;
 
         public FTPTransporter()
         {
             InitializeComponent();
-            this.CanStop = true;
-            this.CanPauseAndContinue = true;
-            this.AutoLog = true;
-
-            this.ServiceName = SettingsContainer.Settings.ServiceName;
-            this.logger = new Logger(SettingsContainer.Settings.ServiceLogFileFullPath);
-            this.timer = new System.Timers.Timer();
-            this.ftpManager = new FTPManager(SettingsContainer.Settings.FtpUri, SettingsContainer.Settings.IsPassiveFtp, logger);
-            this.repository = new Repository(logger);
-        }
-
-        protected override void OnStart(string[] args)
-        {
-            StringBuilder log = new StringBuilder();
-            log.AppendFormat("Service started. Ftp URI: {0}  Check interval: {1} seconds. Passive ftp: {2}", 
-                SettingsContainer.Settings.FtpUri, SettingsContainer.Settings.TransporterListenIntervalSec, SettingsContainer.Settings.IsPassiveFtp);
-            logger.WriteLog(log.ToString());
-
-
             
-            this.timer.Enabled = true;
-            this.timer.Interval = SettingsContainer.Settings.TransporterListenIntervalSec * 1000;
-            this.timer.Elapsed += new System.Timers.ElapsedEventHandler(Tick);
-            this.timer.AutoReset = true;
-            this.timer.Start();
-        }
-
-        protected override void OnStop()
-        {
-            logger.WriteLog("Service stopped.");
-
-        }
-
-        private void Tick(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            
-            logger.WriteLog("Start checking waybills on a FTP server");
+            Environment.CurrentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
             try
             {
-                foreach (var item in repository.AccessDataList)
-                {
-                    logger.WriteLog("Checking object ID:" + item.ID + " " + item.ShopName);
-                    this.ftpManager.DownloadFiles(item);
-                }
+                this.Settings = SettingsContainer.GetSettings();
             }
-            catch (NullReferenceException ex)
+            catch(Exception ex)
             {
-                logger.WriteLog("Error to downloading waybills.");
-                logger.WriteLog(ex.StackTrace + ":" + ex.Message);
+                EventLog.Source = "FtpTransporter";
+                EventLog.WriteEntry(string.Format("{0}: {1}. {2}", ex.StackTrace, ex.Message, "Error to initialization settings from database."));
             }
 
-            logger.WriteLog("End checking waybills on a FTP server");
+            this.CanStop = true;
+            this.CanPauseAndContinue = true;
+            this.AutoLog = true;
+            this.ServiceName = this.Settings.ServiceName;
+            EventLog.Source = this.ServiceName;
+            this.Logger = new Logger(string.Format("{0}.{1}", this.ServiceName, "log"), this.ServiceName);
+            this.Timer = new Timer();
+            this.FtpManager = new ManagerFtp(this.Settings.FtpUri, Convert.ToBoolean(this.Settings.FtpIsPassive), this.Logger);
+            this.WayBillRepository = new WayBillRepository();
+            this.TradeObjectRepository = new TradeObjectRepository();
+        }
+
+        /// <summary>
+        /// Событие запуска службы.
+        /// </summary>
+        /// <param name="args"></param>
+        protected override void OnStart(string[] args)
+        {
+            StringBuilder log = new StringBuilder();
+            log.AppendFormat("Service started. Ftp URI: {0}  Check interval: {1} seconds. Passive ftp: {2}",
+                Settings.FtpUri, Settings.FtpDownloadInttervalSec, Settings.FtpIsPassive);
+            this.Timer.Enabled = true;
+            this.Timer.Interval = Settings.FtpDownloadInttervalSec * 1000;
+            this.Timer.Elapsed += new ElapsedEventHandler(Tick);
+            this.Timer.AutoReset = true;
+            this.Timer.Start();
+            this.Logger.WriteLog(log.ToString());
+        }
+
+        /// <summary>
+        /// Событие остановки службы.
+        /// </summary>
+        protected override void OnStop()
+        {
+            this.Logger.WriteLog("Service stopped.");
+
+        }
+
+        /// <summary>
+        /// Событие тика таймера.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Tick(object sender, ElapsedEventArgs e)
+        {
+            this.Logger.WriteLog("Start checking waybills on a FTP server");
+
+
+            foreach (var item in this.TradeObjectRepository.GetAllEntities())
+            {
+                this.Logger.WriteLog("Checking object ID:" + item.ID + " " + item.Name);
+                try
+                {
+                    this.FtpManager.DownloadFiles(item);
+                }
+                catch (Exception ex)
+                {
+                    this.Logger.WriteLog(string.Format("{0}, {1}: {2}. Error to downloading waybills", ex.Source, ex.StackTrace, ex.Message), LogTypes.ERROR);
+                }
+            }
+
+
+            this.Logger.WriteLog("End checking waybills on a FTP server");
         }
     }
 }

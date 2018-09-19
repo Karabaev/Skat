@@ -18,7 +18,7 @@ namespace DomainModel.Repository
         public bool AddEntity(Supplier entity)
         {
             this.Context.Suppliers.Add(entity);
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         public List<Supplier> GetAllEntities()
@@ -48,7 +48,7 @@ namespace DomainModel.Repository
         public bool RemoveEntity(int id)
         {
             this.Context.Suppliers.Remove(this.Context.Suppliers.Where(c => c.ID == id).FirstOrDefault());
-            return this.Context.SaveChanges() > 0;
+            return this.SaveChanges();
         }
 
         public bool UpdateEntity(Supplier entity)
@@ -67,6 +67,11 @@ namespace DomainModel.Repository
 
             old.Reinitialization(entity);
 
+            return this.SaveChanges();
+        }
+
+        public bool SaveChanges()
+        {
             return this.Context.SaveChanges() > 0;
         }
 

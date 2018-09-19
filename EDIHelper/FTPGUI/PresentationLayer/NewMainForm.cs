@@ -48,7 +48,11 @@ namespace FTPGui.PresentationLayer
                 this.TOClientCmb.Items.Add(item);
             }
 
-            this.TOClientCmb.SelectedIndex = 0;
+            if(this.TOClientCmb.Items.Count > 0)
+            {
+                this.TOClientCmb.SelectedIndex = 0;
+            }
+            
         }
 
         /// <summary>
@@ -194,6 +198,30 @@ namespace FTPGui.PresentationLayer
         private void UpdateWaybillPage()
         {
             this.WayBillsTbl.DataSource = this.WayBillRepository.GetAllEntities();
+        }
+
+        private void TOSaveBtn_Click(object sender, EventArgs e)
+        {
+            if(!this.TradeObjectRepository.SaveChanges())
+            {
+                // вывести сообщение
+            }
+        }
+
+        private void ClientsSaveBtn_Click(object sender, EventArgs e)
+        {
+            if (!this.ClientRepository.SaveChanges())
+            {
+                // вывести сообщение
+            }
+        }
+
+        private void SuppliersChangeBtn_Click(object sender, EventArgs e)
+        {
+            if (!this.SupplierRepository.SaveChanges())
+            {
+                // вывести сообщение
+            }
         }
 
         private TradeObjectRepository TradeObjectRepository { get; set; }
