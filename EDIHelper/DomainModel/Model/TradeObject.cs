@@ -45,5 +45,10 @@
         {
             return string.Format("ID: {0}, Name: {1}, Address: {2}, GLN: {3}", this.ID, this.Name, this.Address, this.GLN);
         }
+
+        public bool LikeAs(IEntity other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

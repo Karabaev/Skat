@@ -9,6 +9,11 @@
         public int FtpIsPassive { get; set; }
         public string ServiceName { get; set; }
 
+        public bool LikeAs(IEntity other)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Reinitialization(IEntity other)
         {
             if (!(other is Settings newSettings))

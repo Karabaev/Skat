@@ -7,12 +7,10 @@
     {
         public int ID { get; set; }
         public string Number { get; set; }
-        [Browsable(false)]
         public int SupplierID { get; set; }
-        [Browsable(false)]
         public int ClientID { get; set; }
-        public Supplier Supplier { get; set; }
-        public Client Client { get; set; }
+        public DateTime DocumentDate { get; set; }
+        public DateTime DownloadDate { get; set; }
 
         public void Reinitialization(IEntity other)
         {
@@ -24,13 +22,23 @@
             this.Number = newWayBill.Number;
             this.SupplierID = newWayBill.SupplierID;
             this.ClientID = newWayBill.ClientID;
-            this.Supplier = newWayBill.Supplier;
-            this.Client = newWayBill.Client;
+            this.DocumentDate = newWayBill.DocumentDate;
+            this.DownloadDate = newWayBill.DownloadDate;
         }
 
         public override bool Equals(object other)
         {
-            throw new NotImplementedException();
+            return other is Waybill wb && this.ID == wb.ID && this.LikeAs(wb);
+        }
+
+        public bool LikeAs(IEntity other)
+        {
+            return other is Waybill wb &&
+                    this.Number == wb.Number &&
+                    this.SupplierID == wb.SupplierID &&
+                    this.ClientID == wb.ClientID &&
+                    this.DocumentDate == wb.DocumentDate &&
+                    this.DownloadDate == wb.DownloadDate;
         }
 
         public override int GetHashCode()

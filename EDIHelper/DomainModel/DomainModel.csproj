@@ -62,10 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\WBService.cs" />
+    <Compile Include="Logic\XML\EDIDocumentStruct.cs" />
     <Compile Include="Logic\Logger.cs" />
     <Compile Include="Logic\LogTypes.cs" />
     <Compile Include="Logic\ManagerFtp.cs" />
     <Compile Include="Logic\SettingsContainer.cs" />
+    <Compile Include="Logic\XML\WarePosition.cs" />
+    <Compile Include="Logic\XML\WayBillDocument.cs" />
+    <Compile Include="Logic\XML\XMLConverter.cs" />
+    <Compile Include="Model\AccumulationRegister.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ICounteragent.cs" />
     <Compile Include="Model\IEntity.cs" />
@@ -79,6 +85,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Repository\AccumRegisterRepository.cs" />
     <Compile Include="Repository\ClientRepository.cs" />
     <Compile Include="Repository\Context.cs" />
     <Compile Include="Repository\IRepository.cs" />

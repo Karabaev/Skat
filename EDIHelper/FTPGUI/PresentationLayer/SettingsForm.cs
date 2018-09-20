@@ -44,14 +44,22 @@ namespace FTPGui.PresentationLayer
         /// <param name="e"></param>
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            SettingsContainer.SetSettings(new Settings
+            try
             {
-                FtpUri = FtpUriTxt.Text,
-                FtpIsPassive = Convert.ToInt32(PassiveChk.Checked),
-                FtpDownloadInttervalSec = int.Parse(IntervalTxt.Text),
-                FtpFolder = WBFolderTxt.Text,
-                ServiceName = ServiceNameTxt.Text,
-            });
+                SettingsContainer.SetSettings(new Settings
+                {
+                    FtpUri = FtpUriTxt.Text,
+                    FtpIsPassive = Convert.ToInt32(PassiveChk.Checked),
+                    FtpDownloadInttervalSec = int.Parse(IntervalTxt.Text),
+                    FtpFolder = WBFolderTxt.Text,
+                    ServiceName = ServiceNameTxt.Text,
+                });
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Формат аргумента не допутим.", "Ошибка.");
+            }
+            
 
             this.Close();
         }

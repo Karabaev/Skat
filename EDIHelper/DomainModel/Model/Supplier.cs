@@ -11,7 +11,7 @@
         public string INN { get; set; }
         public string KPP { get; set; }
         [DisplayName("Roaming?")]
-        public bool IsRoaming { get; set; }
+        public bool? IsRoaming { get; set; }
 
         public void Reinitialization(IEntity other)
         {
@@ -40,6 +40,11 @@
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public bool LikeAs(IEntity other)
+        {
+            throw new NotImplementedException();
         }
     }
 }

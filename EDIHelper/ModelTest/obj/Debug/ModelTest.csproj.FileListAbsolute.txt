@@ -29,3 +29,5 @@ C:\Доработки\EDIHelper\ModelTest\bin\Debug\EntityFramework.SqlServer.xm
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\System.Data.SQLite.xml
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\System.Data.SQLite.dll.config
 C:\Доработки\EDIHelper\ModelTest\bin\Debug\Main.db
+C:\Доработки\EDIHelper\ModelTest\bin\Debug\ArxOne.Ftp.dll
+C:\Доработки\EDIHelper\ModelTest\bin\Debug\ArxOne.Ftp.xml

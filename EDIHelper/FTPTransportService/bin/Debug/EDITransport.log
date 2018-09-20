@@ -2071,3 +2071,502 @@
 19.09.2018 13:28:56: INFO Saved waybill file DESADV_58766045_75cc3823-08a9-41c8-a925-a5041775cea3.xml.
 19.09.2018 13:28:56: INFO End checking waybills on a FTP server.
 19.09.2018 13:29:10: INFO Service stopped..
+20.09.2018 16:43:16: INFO Service started. Ftp URI: ftp://192.168.5.5  Check interval: 10 seconds. Passive ftp: 1.
+20.09.2018 16:43:26: INFO Start checking waybills on a FTP server.
+20.09.2018 16:43:26: INFO Checking object ID:1 test.
+20.09.2018 16:43:26: INFO Document files count in directory: 3.
+20.09.2018 16:43:26: INFO Parsing waybill..
+20.09.2018 16:43:27: INFO File /INBOX/Test/DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml was deleted from FTP.
+20.09.2018 16:43:27: INFO Saved waybill file DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml.
+20.09.2018 16:43:27: INFO Parsing waybill..
+20.09.2018 16:43:28: INFO File /INBOX/Test/DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml was deleted from FTP.
+20.09.2018 16:43:28: INFO Saved waybill file DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml.
+20.09.2018 16:43:28: INFO Parsing waybill..
+20.09.2018 16:43:28: INFO File /INBOX/Test/DESADV_58766045_75cc3823-08a9-41c8-a925-a5041775cea3.xml was deleted from FTP.
+20.09.2018 16:43:28: INFO Saved waybill file DESADV_58766045_75cc3823-08a9-41c8-a925-a5041775cea3.xml.
+20.09.2018 16:43:28: INFO End checking waybills on a FTP server.
+20.09.2018 16:43:36: INFO Start checking waybills on a FTP server.
+20.09.2018 16:43:36: INFO Checking object ID:1 test.
+20.09.2018 16:43:36: INFO Document files count in directory: 0.
+20.09.2018 16:43:36: INFO End checking waybills on a FTP server.
+20.09.2018 16:43:46: INFO Start checking waybills on a FTP server.
+20.09.2018 16:43:46: INFO Checking object ID:1 test.
+20.09.2018 16:43:46: INFO Document files count in directory: 0.
+20.09.2018 16:43:46: INFO End checking waybills on a FTP server.
+20.09.2018 16:43:56: INFO Start checking waybills on a FTP server.
+20.09.2018 16:43:56: INFO Checking object ID:1 test.
+20.09.2018 16:43:56: INFO Document files count in directory: 0.
+20.09.2018 16:43:56: INFO End checking waybills on a FTP server.
+20.09.2018 16:44:03: INFO Service stopped..
+20.09.2018 16:49:38: INFO Service started. Ftp URI: ftp://192.168.5.5  Check interval: 30 seconds. Passive ftp: 1.
+20.09.2018 16:50:08: INFO Start checking waybills on a FTP server.
+20.09.2018 16:50:08: INFO Checking object ID:1 test.
+20.09.2018 16:50:08: INFO Document files count in directory: 4.
+20.09.2018 16:50:08: INFO Parsing waybill..
+20.09.2018 16:50:08: INFO File /INBOX/Test/DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml was deleted from FTP.
+20.09.2018 16:50:08: INFO Saved waybill file DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml.
+20.09.2018 16:50:08: INFO Parsing waybill..
+20.09.2018 16:50:09: INFO File /INBOX/Test/DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml was deleted from FTP.
+20.09.2018 16:50:09: INFO Saved waybill file DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml.
+20.09.2018 16:50:09: INFO Parsing waybill..
+20.09.2018 16:50:09: INFO File /INBOX/Test/DESADV_58766045_75cc3823-08a9-41c8-a925-a5041775cea3.xml was deleted from FTP.
+20.09.2018 16:50:09: INFO Saved waybill file DESADV_58766045_75cc3823-08a9-41c8-a925-a5041775cea3.xml.
+20.09.2018 16:50:09: INFO Parsing waybill..
+20.09.2018 16:50:09: INFO File /INBOX/Test/DESADV_58766047_493e75ba-eefb-434f-8958-375d31c9f503.xml was deleted from FTP.
+20.09.2018 16:50:09: INFO Saved waybill file DESADV_58766047_493e75ba-eefb-434f-8958-375d31c9f503.xml.
+20.09.2018 16:50:09: INFO End checking waybills on a FTP server.
+20.09.2018 16:50:38: INFO Start checking waybills on a FTP server.
+20.09.2018 16:50:38: INFO Checking object ID:1 test.
+20.09.2018 16:50:38: INFO Document files count in directory: 0.
+20.09.2018 16:50:38: INFO End checking waybills on a FTP server.
+20.09.2018 16:51:08: INFO Start checking waybills on a FTP server.
+20.09.2018 16:51:08: INFO Checking object ID:1 test.
+20.09.2018 16:51:08: INFO Document files count in directory: 0.
+20.09.2018 16:51:08: INFO End checking waybills on a FTP server.
+20.09.2018 16:51:38: INFO Start checking waybills on a FTP server.
+20.09.2018 16:51:38: INFO Checking object ID:1 test.
+20.09.2018 16:51:38: INFO Document files count in directory: 0.
+20.09.2018 16:51:38: INFO End checking waybills on a FTP server.
+20.09.2018 16:52:08: INFO Start checking waybills on a FTP server.
+20.09.2018 16:52:08: INFO Checking object ID:1 test.
+20.09.2018 16:52:08: INFO Document files count in directory: 0.
+20.09.2018 16:52:08: INFO End checking waybills on a FTP server.
+20.09.2018 16:52:09: INFO Service stopped..
+20.09.2018 17:19:00: INFO Service started. Ftp URI: ftp://192.168.5.5  Check interval: 10 seconds. Passive ftp: 1.
+20.09.2018 17:19:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:19:10: INFO Checking object ID:1 test.
+20.09.2018 17:19:10: INFO Document files count in directory: 2.
+20.09.2018 17:19:10: INFO Parsing waybill..
+20.09.2018 17:19:10: ERROR Error adding waybill to db. File: DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml. DomainModel: Ссылка на объект не указывает на экземпляр объекта..    в DomainModel.Logic.XML.XMLConverter.GetWaybill() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 56
+   в DomainModel.Logic.ManagerFtp.DownloadFiles(TradeObject tradeObject) в C:\Доработки\EDIHelper\DomainModel\Logic\ManagerFtp.cs:строка 58.
+20.09.2018 17:19:10: INFO File /INBOX/Test/DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml was deleted from FTP.
+20.09.2018 17:19:10: INFO Saved waybill file DESADV_58764887_dc228dcc-fbb5-463d-bad2-d6a5763944c8.xml.
+20.09.2018 17:19:10: INFO Parsing waybill..
+20.09.2018 17:19:11: INFO File /INBOX/Test/DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml was deleted from FTP.
+20.09.2018 17:19:11: INFO Saved waybill file DESADV_58764895_d58f37e2-95d2-4e20-9631-aedac072a14b.xml.
+20.09.2018 17:19:11: INFO End checking waybills on a FTP server.
+20.09.2018 17:19:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:19:20: INFO Checking object ID:1 test.
+20.09.2018 17:19:20: INFO Document files count in directory: 0.
+20.09.2018 17:19:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:19:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:19:30: INFO Checking object ID:1 test.
+20.09.2018 17:19:33: INFO Document files count in directory: 0.
+20.09.2018 17:19:33: INFO End checking waybills on a FTP server.
+20.09.2018 17:19:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:19:40: INFO Checking object ID:1 test.
+20.09.2018 17:19:40: INFO Document files count in directory: 0.
+20.09.2018 17:19:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:19:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:19:50: INFO Checking object ID:1 test.
+20.09.2018 17:19:50: INFO Document files count in directory: 0.
+20.09.2018 17:19:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:00: INFO Checking object ID:1 test.
+20.09.2018 17:20:01: INFO Document files count in directory: 0.
+20.09.2018 17:20:01: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:10: INFO Checking object ID:1 test.
+20.09.2018 17:20:10: INFO Document files count in directory: 0.
+20.09.2018 17:20:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:20: INFO Checking object ID:1 test.
+20.09.2018 17:20:21: INFO Document files count in directory: 0.
+20.09.2018 17:20:21: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:30: INFO Checking object ID:1 test.
+20.09.2018 17:20:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:40: INFO Checking object ID:1 test.
+20.09.2018 17:20:40: INFO Document files count in directory: 0.
+20.09.2018 17:20:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:20:50: INFO Checking object ID:1 test.
+20.09.2018 17:20:50: ERROR ArxOne.Ftp,    в ArxOne.Ftp.FtpSession.Process[TResult](Func`1 func, String commandDescription, String requestCommand, String[] requestParameters)
+   в ArxOne.Ftp.FtpSession.Connect(TimeSpan connectTimeout, TimeSpan readWriteTimeout)
+   в ArxOne.Ftp.FtpSession.get_ProtocolStream()
+   в ArxOne.Ftp.FtpSession.SetTransferMode(FtpTransferMode value)
+   в ArxOne.Ftp.FtpSession.OpenDataStream(Boolean passive, TimeSpan connectTimeout, TimeSpan readWriteTimeout, FtpTransferMode transferMode, Nullable`1 streamMode)
+   в ArxOne.Ftp.FtpClientUtility.OpenDataStream(FtpSession session, FtpTransferMode transferMode, FtpStreamMode streamMode)
+   в ArxOne.Ftp.FtpClientUtility.ProcessList(FtpSession session, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.<>c__DisplayClass2_0.<List>b__0(FtpSession handle)
+   в ArxOne.Ftp.FtpClient.Process[TResult](Func`2 action, FtpSession session)
+   в ArxOne.Ftp.FtpClientUtility.List(FtpClient ftpClient, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.ListEntries(FtpClient ftpClient, FtpPath path)
+   в DomainModel.Logic.ManagerFtp.DownloadFiles(TradeObject tradeObject) в C:\Доработки\EDIHelper\DomainModel\Logic\ManagerFtp.cs:строка 38
+   в FTPTransporter.FTPTransporter.Tick(Object sender, ElapsedEventArgs e) в C:\Доработки\EDIHelper\FTPTransportService\FTPTransporter.cs:строка 95: IO Exception while connecting to FTP server. Error to downloading waybills.
+20.09.2018 17:20:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:20:50: INFO Document files count in directory: 0.
+20.09.2018 17:20:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:00: INFO Checking object ID:1 test.
+20.09.2018 17:21:00: INFO Document files count in directory: 0.
+20.09.2018 17:21:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:10: INFO Checking object ID:1 test.
+20.09.2018 17:21:10: INFO Document files count in directory: 0.
+20.09.2018 17:21:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:20: INFO Checking object ID:1 test.
+20.09.2018 17:21:21: INFO Document files count in directory: 0.
+20.09.2018 17:21:21: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:30: INFO Checking object ID:1 test.
+20.09.2018 17:21:30: INFO Document files count in directory: 0.
+20.09.2018 17:21:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:40: INFO Checking object ID:1 test.
+20.09.2018 17:21:40: INFO Document files count in directory: 0.
+20.09.2018 17:21:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:21:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:21:50: INFO Checking object ID:1 test.
+20.09.2018 17:21:50: INFO Document files count in directory: 0.
+20.09.2018 17:21:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:00: INFO Checking object ID:1 test.
+20.09.2018 17:22:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:10: INFO Checking object ID:1 test.
+20.09.2018 17:22:20: ERROR ArxOne.Ftp,    в ArxOne.Ftp.FtpSession.Process[TResult](Func`1 func, String commandDescription, String requestCommand, String[] requestParameters)
+   в ArxOne.Ftp.FtpSession.Connect(TimeSpan connectTimeout, TimeSpan readWriteTimeout)
+   в ArxOne.Ftp.FtpSession.get_ProtocolStream()
+   в ArxOne.Ftp.FtpSession.SetTransferMode(FtpTransferMode value)
+   в ArxOne.Ftp.FtpSession.OpenDataStream(Boolean passive, TimeSpan connectTimeout, TimeSpan readWriteTimeout, FtpTransferMode transferMode, Nullable`1 streamMode)
+   в ArxOne.Ftp.FtpClientUtility.OpenDataStream(FtpSession session, FtpTransferMode transferMode, FtpStreamMode streamMode)
+   в ArxOne.Ftp.FtpClientUtility.ProcessList(FtpSession session, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.<>c__DisplayClass2_0.<List>b__0(FtpSession handle)
+   в ArxOne.Ftp.FtpClient.Process[TResult](Func`2 action, FtpSession session)
+   в ArxOne.Ftp.FtpClientUtility.List(FtpClient ftpClient, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.ListEntries(FtpClient ftpClient, FtpPath path)
+   в DomainModel.Logic.ManagerFtp.DownloadFiles(TradeObject tradeObject) в C:\Доработки\EDIHelper\DomainModel\Logic\ManagerFtp.cs:строка 38
+   в FTPTransporter.FTPTransporter.Tick(Object sender, ElapsedEventArgs e) в C:\Доработки\EDIHelper\FTPTransportService\FTPTransporter.cs:строка 95: IO Exception while connecting to FTP server. Error to downloading waybills.
+20.09.2018 17:22:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:20: INFO Checking object ID:1 test.
+20.09.2018 17:22:30: ERROR ArxOne.Ftp,    в ArxOne.Ftp.FtpSession.Process[TResult](Func`1 func, String commandDescription, String requestCommand, String[] requestParameters)
+   в ArxOne.Ftp.FtpSession.Connect(TimeSpan connectTimeout, TimeSpan readWriteTimeout)
+   в ArxOne.Ftp.FtpSession.get_ProtocolStream()
+   в ArxOne.Ftp.FtpSession.SetTransferMode(FtpTransferMode value)
+   в ArxOne.Ftp.FtpSession.OpenDataStream(Boolean passive, TimeSpan connectTimeout, TimeSpan readWriteTimeout, FtpTransferMode transferMode, Nullable`1 streamMode)
+   в ArxOne.Ftp.FtpClientUtility.OpenDataStream(FtpSession session, FtpTransferMode transferMode, FtpStreamMode streamMode)
+   в ArxOne.Ftp.FtpClientUtility.ProcessList(FtpSession session, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.<>c__DisplayClass2_0.<List>b__0(FtpSession handle)
+   в ArxOne.Ftp.FtpClient.Process[TResult](Func`2 action, FtpSession session)
+   в ArxOne.Ftp.FtpClientUtility.List(FtpClient ftpClient, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.ListEntries(FtpClient ftpClient, FtpPath path)
+   в DomainModel.Logic.ManagerFtp.DownloadFiles(TradeObject tradeObject) в C:\Доработки\EDIHelper\DomainModel\Logic\ManagerFtp.cs:строка 38
+   в FTPTransporter.FTPTransporter.Tick(Object sender, ElapsedEventArgs e) в C:\Доработки\EDIHelper\FTPTransportService\FTPTransporter.cs:строка 95: IO Exception while connecting to FTP server. Error to downloading waybills.
+20.09.2018 17:22:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:30: INFO Checking object ID:1 test.
+20.09.2018 17:22:34: INFO Document files count in directory: 0.
+20.09.2018 17:22:34: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:40: ERROR ArxOne.Ftp,    в ArxOne.Ftp.FtpSession.Process[TResult](Func`1 func, String commandDescription, String requestCommand, String[] requestParameters)
+   в ArxOne.Ftp.FtpSession.Connect(TimeSpan connectTimeout, TimeSpan readWriteTimeout)
+   в ArxOne.Ftp.FtpSession.get_ProtocolStream()
+   в ArxOne.Ftp.FtpSession.SetTransferMode(FtpTransferMode value)
+   в ArxOne.Ftp.FtpSession.OpenDataStream(Boolean passive, TimeSpan connectTimeout, TimeSpan readWriteTimeout, FtpTransferMode transferMode, Nullable`1 streamMode)
+   в ArxOne.Ftp.FtpClientUtility.OpenDataStream(FtpSession session, FtpTransferMode transferMode, FtpStreamMode streamMode)
+   в ArxOne.Ftp.FtpClientUtility.ProcessList(FtpSession session, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.<>c__DisplayClass2_0.<List>b__0(FtpSession handle)
+   в ArxOne.Ftp.FtpClient.Process[TResult](Func`2 action, FtpSession session)
+   в ArxOne.Ftp.FtpClientUtility.List(FtpClient ftpClient, FtpPath path)
+   в ArxOne.Ftp.FtpClientUtility.ListEntries(FtpClient ftpClient, FtpPath path)
+   в DomainModel.Logic.ManagerFtp.DownloadFiles(TradeObject tradeObject) в C:\Доработки\EDIHelper\DomainModel\Logic\ManagerFtp.cs:строка 38
+   в FTPTransporter.FTPTransporter.Tick(Object sender, ElapsedEventArgs e) в C:\Доработки\EDIHelper\FTPTransportService\FTPTransporter.cs:строка 95: IO Exception while connecting to FTP server. Error to downloading waybills.
+20.09.2018 17:22:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:40: INFO Checking object ID:1 test.
+20.09.2018 17:22:40: INFO Document files count in directory: 0.
+20.09.2018 17:22:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:22:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:22:50: INFO Checking object ID:1 test.
+20.09.2018 17:22:50: INFO Document files count in directory: 0.
+20.09.2018 17:22:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:00: INFO Checking object ID:1 test.
+20.09.2018 17:23:00: INFO Document files count in directory: 0.
+20.09.2018 17:23:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:10: INFO Checking object ID:1 test.
+20.09.2018 17:23:10: INFO Document files count in directory: 0.
+20.09.2018 17:23:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:20: INFO Checking object ID:1 test.
+20.09.2018 17:23:20: INFO Document files count in directory: 0.
+20.09.2018 17:23:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:30: INFO Checking object ID:1 test.
+20.09.2018 17:23:30: INFO Document files count in directory: 0.
+20.09.2018 17:23:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:40: INFO Checking object ID:1 test.
+20.09.2018 17:23:40: INFO Document files count in directory: 0.
+20.09.2018 17:23:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:23:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:23:50: INFO Checking object ID:1 test.
+20.09.2018 17:23:50: INFO Document files count in directory: 0.
+20.09.2018 17:23:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:00: INFO Checking object ID:1 test.
+20.09.2018 17:24:00: INFO Document files count in directory: 0.
+20.09.2018 17:24:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:10: INFO Checking object ID:1 test.
+20.09.2018 17:24:10: INFO Document files count in directory: 0.
+20.09.2018 17:24:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:20: INFO Checking object ID:1 test.
+20.09.2018 17:24:20: INFO Document files count in directory: 0.
+20.09.2018 17:24:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:30: INFO Checking object ID:1 test.
+20.09.2018 17:24:30: INFO Document files count in directory: 0.
+20.09.2018 17:24:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:40: INFO Checking object ID:1 test.
+20.09.2018 17:24:40: INFO Document files count in directory: 0.
+20.09.2018 17:24:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:24:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:24:50: INFO Checking object ID:1 test.
+20.09.2018 17:24:50: INFO Document files count in directory: 0.
+20.09.2018 17:24:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:00: INFO Checking object ID:1 test.
+20.09.2018 17:25:00: INFO Document files count in directory: 0.
+20.09.2018 17:25:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:10: INFO Checking object ID:1 test.
+20.09.2018 17:25:10: INFO Document files count in directory: 0.
+20.09.2018 17:25:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:20: INFO Checking object ID:1 test.
+20.09.2018 17:25:20: INFO Document files count in directory: 0.
+20.09.2018 17:25:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:30: INFO Checking object ID:1 test.
+20.09.2018 17:25:30: INFO Document files count in directory: 0.
+20.09.2018 17:25:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:40: INFO Checking object ID:1 test.
+20.09.2018 17:25:40: INFO Document files count in directory: 0.
+20.09.2018 17:25:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:25:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:25:50: INFO Checking object ID:1 test.
+20.09.2018 17:25:50: INFO Document files count in directory: 0.
+20.09.2018 17:25:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:00: INFO Checking object ID:1 test.
+20.09.2018 17:26:00: INFO Document files count in directory: 0.
+20.09.2018 17:26:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:10: INFO Checking object ID:1 test.
+20.09.2018 17:26:10: INFO Document files count in directory: 0.
+20.09.2018 17:26:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:20: INFO Checking object ID:1 test.
+20.09.2018 17:26:20: INFO Document files count in directory: 0.
+20.09.2018 17:26:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:30: INFO Checking object ID:1 test.
+20.09.2018 17:26:30: INFO Document files count in directory: 0.
+20.09.2018 17:26:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:40: INFO Checking object ID:1 test.
+20.09.2018 17:26:40: INFO Document files count in directory: 0.
+20.09.2018 17:26:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:26:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:26:50: INFO Checking object ID:1 test.
+20.09.2018 17:26:50: INFO Document files count in directory: 0.
+20.09.2018 17:26:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:00: INFO Checking object ID:1 test.
+20.09.2018 17:27:00: INFO Document files count in directory: 0.
+20.09.2018 17:27:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:10: INFO Checking object ID:1 test.
+20.09.2018 17:27:10: INFO Document files count in directory: 0.
+20.09.2018 17:27:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:20: INFO Checking object ID:1 test.
+20.09.2018 17:27:20: INFO Document files count in directory: 0.
+20.09.2018 17:27:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:30: INFO Checking object ID:1 test.
+20.09.2018 17:27:30: INFO Document files count in directory: 0.
+20.09.2018 17:27:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:40: INFO Checking object ID:1 test.
+20.09.2018 17:27:40: INFO Document files count in directory: 0.
+20.09.2018 17:27:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:27:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:27:50: INFO Checking object ID:1 test.
+20.09.2018 17:27:50: INFO Document files count in directory: 0.
+20.09.2018 17:27:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:00: INFO Checking object ID:1 test.
+20.09.2018 17:28:00: INFO Document files count in directory: 0.
+20.09.2018 17:28:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:10: INFO Checking object ID:1 test.
+20.09.2018 17:28:10: INFO Document files count in directory: 0.
+20.09.2018 17:28:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:20: INFO Checking object ID:1 test.
+20.09.2018 17:28:20: INFO Document files count in directory: 0.
+20.09.2018 17:28:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:30: INFO Checking object ID:1 test.
+20.09.2018 17:28:30: INFO Document files count in directory: 0.
+20.09.2018 17:28:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:40: INFO Checking object ID:1 test.
+20.09.2018 17:28:40: INFO Document files count in directory: 0.
+20.09.2018 17:28:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:28:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:28:50: INFO Checking object ID:1 test.
+20.09.2018 17:28:50: INFO Document files count in directory: 0.
+20.09.2018 17:28:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:00: INFO Checking object ID:1 test.
+20.09.2018 17:29:00: INFO Document files count in directory: 0.
+20.09.2018 17:29:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:10: INFO Checking object ID:1 test.
+20.09.2018 17:29:10: INFO Document files count in directory: 0.
+20.09.2018 17:29:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:20: INFO Checking object ID:1 test.
+20.09.2018 17:29:20: INFO Document files count in directory: 0.
+20.09.2018 17:29:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:30: INFO Checking object ID:1 test.
+20.09.2018 17:29:30: INFO Document files count in directory: 0.
+20.09.2018 17:29:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:40: INFO Checking object ID:1 test.
+20.09.2018 17:29:40: INFO Document files count in directory: 0.
+20.09.2018 17:29:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:29:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:29:50: INFO Checking object ID:1 test.
+20.09.2018 17:29:50: INFO Document files count in directory: 0.
+20.09.2018 17:29:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:00: INFO Checking object ID:1 test.
+20.09.2018 17:30:00: INFO Document files count in directory: 0.
+20.09.2018 17:30:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:10: INFO Checking object ID:1 test.
+20.09.2018 17:30:10: INFO Document files count in directory: 0.
+20.09.2018 17:30:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:20: INFO Checking object ID:1 test.
+20.09.2018 17:30:20: INFO Document files count in directory: 0.
+20.09.2018 17:30:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:30: INFO Checking object ID:1 test.
+20.09.2018 17:30:30: INFO Document files count in directory: 0.
+20.09.2018 17:30:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:40: INFO Checking object ID:1 test.
+20.09.2018 17:30:40: INFO Document files count in directory: 0.
+20.09.2018 17:30:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:30:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:30:50: INFO Checking object ID:1 test.
+20.09.2018 17:30:50: INFO Document files count in directory: 0.
+20.09.2018 17:30:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:00: INFO Checking object ID:1 test.
+20.09.2018 17:31:00: INFO Document files count in directory: 0.
+20.09.2018 17:31:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:10: INFO Checking object ID:1 test.
+20.09.2018 17:31:10: INFO Document files count in directory: 0.
+20.09.2018 17:31:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:20: INFO Checking object ID:1 test.
+20.09.2018 17:31:20: INFO Document files count in directory: 0.
+20.09.2018 17:31:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:30: INFO Checking object ID:1 test.
+20.09.2018 17:31:30: INFO Document files count in directory: 0.
+20.09.2018 17:31:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:40: INFO Checking object ID:1 test.
+20.09.2018 17:31:40: INFO Document files count in directory: 0.
+20.09.2018 17:31:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:31:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:31:50: INFO Checking object ID:1 test.
+20.09.2018 17:31:50: INFO Document files count in directory: 0.
+20.09.2018 17:31:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:00: INFO Checking object ID:1 test.
+20.09.2018 17:32:00: INFO Document files count in directory: 0.
+20.09.2018 17:32:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:10: INFO Checking object ID:1 test.
+20.09.2018 17:32:10: INFO Document files count in directory: 0.
+20.09.2018 17:32:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:20: INFO Checking object ID:1 test.
+20.09.2018 17:32:20: INFO Document files count in directory: 0.
+20.09.2018 17:32:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:30: INFO Checking object ID:1 test.
+20.09.2018 17:32:30: INFO Document files count in directory: 0.
+20.09.2018 17:32:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:40: INFO Checking object ID:1 test.
+20.09.2018 17:32:40: INFO Document files count in directory: 0.
+20.09.2018 17:32:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:32:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:32:50: INFO Checking object ID:1 test.
+20.09.2018 17:32:50: INFO Document files count in directory: 0.
+20.09.2018 17:32:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:00: INFO Checking object ID:1 test.
+20.09.2018 17:33:00: INFO Document files count in directory: 0.
+20.09.2018 17:33:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:10: INFO Checking object ID:1 test.
+20.09.2018 17:33:10: INFO Document files count in directory: 0.
+20.09.2018 17:33:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:20: INFO Checking object ID:1 test.
+20.09.2018 17:33:20: INFO Document files count in directory: 0.
+20.09.2018 17:33:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:30: INFO Checking object ID:1 test.
+20.09.2018 17:33:30: INFO Document files count in directory: 0.
+20.09.2018 17:33:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:40: INFO Checking object ID:1 test.
+20.09.2018 17:33:40: INFO Document files count in directory: 0.
+20.09.2018 17:33:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:33:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:33:50: INFO Checking object ID:1 test.
+20.09.2018 17:33:50: INFO Document files count in directory: 0.
+20.09.2018 17:33:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:00: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:00: INFO Checking object ID:1 test.
+20.09.2018 17:34:00: INFO Document files count in directory: 0.
+20.09.2018 17:34:00: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:10: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:10: INFO Checking object ID:1 test.
+20.09.2018 17:34:10: INFO Document files count in directory: 0.
+20.09.2018 17:34:10: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:20: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:20: INFO Checking object ID:1 test.
+20.09.2018 17:34:20: INFO Document files count in directory: 0.
+20.09.2018 17:34:20: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:30: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:30: INFO Checking object ID:1 test.
+20.09.2018 17:34:30: INFO Document files count in directory: 0.
+20.09.2018 17:34:30: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:40: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:40: INFO Checking object ID:1 test.
+20.09.2018 17:34:40: INFO Document files count in directory: 0.
+20.09.2018 17:34:40: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:50: INFO Start checking waybills on a FTP server.
+20.09.2018 17:34:50: INFO Checking object ID:1 test.
+20.09.2018 17:34:50: INFO Document files count in directory: 0.
+20.09.2018 17:34:50: INFO End checking waybills on a FTP server.
+20.09.2018 17:34:58: INFO Service stopped..

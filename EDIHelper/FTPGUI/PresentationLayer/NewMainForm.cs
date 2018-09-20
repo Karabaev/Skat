@@ -77,8 +77,8 @@ namespace FTPGui.PresentationLayer
             {
                 Address = TOAddressTxt.Text,
                 ClientID = this.GetIDFromString(TOClientCmb.Text),
-                FtpLogin = TOFtpLoginTxt.Text,
-                FtpPassword = TOFtpPasswordTxt.Text,
+                FtpLogin = TOFtpLoginTxt.Text.Trim(' '),
+                FtpPassword = TOFtpPasswordTxt.Text.Trim(' '),
                 GLN = TOGlnTxt.Text,
                 LocalFolder = TOLocalFolderTxt.Text,
                 Name = TONameTxt.Text

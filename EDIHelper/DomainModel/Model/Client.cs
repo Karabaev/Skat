@@ -38,5 +38,10 @@
             return string.Format("{0}, {1}", this.ID, this.Name);
            // return string.Format("{0}, Name: {1}, GLN: {2}, INN: {3}, KPP: {4}", this.ID, this.Name, this.GLN, this.INN, this.KPP);
         }
+
+        public bool LikeAs(IEntity other)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -24,34 +24,12 @@ namespace DomainModel.Repository
 
         public List<Waybill> GetAllEntities()
         {
-            List<Waybill> result = this.Context.Waybills.ToList();
-
-            if (result == null)
-            {
-                return null;
-            }
-
-            foreach (var item in result)
-            {
-                item.Client = this.ClientRepository.GetAllEntities().Where(c => c.ID == item.ClientID).FirstOrDefault();
-                item.Supplier = this.SupplierRepository.GetAllEntities().Where(s => s.ID == item.SupplierID).FirstOrDefault();
-            }
-
-            return result;
+            return this.Context.Waybills.ToList();
         }
 
         public Waybill GetEntity(int id)
         {
-            Waybill result = this.Context.Waybills.Where(wb => wb.ID == id).FirstOrDefault();
-
-            if (result == null)
-            {
-                return null;
-            }
-
-            result.Client = this.ClientRepository.GetAllEntities().Where(c => c.ID == result.ClientID).FirstOrDefault();
-            result.Supplier = this.SupplierRepository.GetAllEntities().Where(s => s.ID == result.SupplierID).FirstOrDefault();
-            return result;
+            return this.Context.Waybills.Where(wb => wb.ID == id).FirstOrDefault();
         }
 
         public bool RemoveEntity(int id)

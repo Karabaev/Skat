@@ -12,5 +12,6 @@
         public DbSet<TradeObject> TradeObjects { get; set; }
         public DbSet<Waybill> Waybills { get; set; }
         public DbSet<Settings> Settings { get; set; }
+        public DbSet<AccumulationRegister> AccumulationRegister { get; set; }
     }
 }
