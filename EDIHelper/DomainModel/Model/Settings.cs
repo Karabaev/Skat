@@ -8,6 +8,7 @@
         public int FtpDownloadInttervalSec { get; set; }
         public int FtpIsPassive { get; set; }
         public string ServiceName { get; set; }
+        public int FtpTimeoutSec { get; set; }
 
         public bool LikeAs(IEntity other)
         {

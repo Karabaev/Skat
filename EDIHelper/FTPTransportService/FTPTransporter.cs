@@ -46,7 +46,8 @@
             EventLog.Source = this.ServiceName;
             this.Logger = new Logger(string.Format("{0}.{1}", this.ServiceName, "log"), this.ServiceName);
             this.Timer = new Timer();
-            this.FtpManager = new ManagerFtp(this.Settings.FtpUri, Convert.ToBoolean(this.Settings.FtpIsPassive), this.Logger);
+            this.FtpManager = new ManagerFtp(this.Settings.FtpUri, Convert.ToBoolean(this.Settings.FtpIsPassive), 
+                                            this.Settings.FtpTimeoutSec, this.Logger);
             this.WayBillRepository = new WayBillRepository();
             this.TradeObjectRepository = new TradeObjectRepository();
         }
@@ -58,10 +59,10 @@
         protected override void OnStart(string[] args)
         {
             StringBuilder log = new StringBuilder();
-            log.AppendFormat("Service started. Ftp URI: {0}  Check interval: {1} seconds. Passive ftp: {2}",
-                Settings.FtpUri, Settings.FtpDownloadInttervalSec, Settings.FtpIsPassive);
+            log.AppendFormat("Service started. Ftp URI: {0}  Check interval: {1} seconds. Passive ftp: {2}. Timeout: {3} seconds",
+                this.Settings.FtpUri, this.Settings.FtpDownloadInttervalSec, this.Settings.FtpIsPassive, this.Settings.FtpTimeoutSec);
             this.Timer.Enabled = true;
-            this.Timer.Interval = Settings.FtpDownloadInttervalSec * 1000;
+            this.Timer.Interval = this.Settings.FtpDownloadInttervalSec * 1000;
             this.Timer.Elapsed += new ElapsedEventHandler(Tick);
             this.Timer.AutoReset = true;
             this.Timer.Start();
@@ -90,6 +91,7 @@
             foreach (var item in this.TradeObjectRepository.GetAllEntities())
             {
                 this.Logger.WriteLog("Checking object ID:" + item.ID + " " + item.Name);
+
                 try
                 {
                     this.FtpManager.DownloadFiles(item);

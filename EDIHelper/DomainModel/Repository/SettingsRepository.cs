@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainModel.Repository
+﻿namespace DomainModel.Repository
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Model;
+
     public class SettingsRepository : IRepository<Settings>
     {
         public SettingsRepository()

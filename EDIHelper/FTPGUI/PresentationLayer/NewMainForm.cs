@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FTPGui.PresentationLayer
+﻿namespace FTPGui.PresentationLayer
 {
+    using System;
+    using System.Windows.Forms;
     using DomainModel.Model;
     using DomainModel.Repository;
 
@@ -75,13 +67,13 @@ namespace FTPGui.PresentationLayer
         {
             if(this.TradeObjectRepository.AddEntity(new TradeObject
             {
-                Address = TOAddressTxt.Text,
+                Address = this.Trim(TOAddressTxt.Text),
                 ClientID = this.GetIDFromString(TOClientCmb.Text),
-                FtpLogin = TOFtpLoginTxt.Text.Trim(' '),
-                FtpPassword = TOFtpPasswordTxt.Text.Trim(' '),
-                GLN = TOGlnTxt.Text,
-                LocalFolder = TOLocalFolderTxt.Text,
-                Name = TONameTxt.Text
+                FtpLogin = this.Trim(TOFtpLoginTxt.Text),
+                FtpPassword = this.Trim(TOFtpPasswordTxt.Text),
+                GLN = this.Trim(TOGlnTxt.Text),
+                LocalFolder = this.Trim(TOLocalFolderTxt.Text),
+                Name = this.Trim(TONameTxt.Text)
             }))
             {
                 this.UpdateTradeObjectTbl();
@@ -100,7 +92,21 @@ namespace FTPGui.PresentationLayer
         /// <param name="e"></param>
         private void TORemoveBtn_Click(object sender, EventArgs e)
         {
+            if(TradeObjectTbl.SelectedRows.Count == 1)
+            {
+                int id = (int)TradeObjectTbl.SelectedRows[0].Cells["ID"].Value;
 
+                if(!this.TradeObjectRepository.RemoveEntity(id))
+                {
+                    MessageBox.Show("Error deleting.", "Error");
+                }
+
+                this.UpdateTradeObjectTbl();
+            }
+            else
+            {
+                MessageBox.Show("You must select 1 row to delete.", "Error");
+            }
         }
 
         /// <summary>
@@ -126,10 +132,10 @@ namespace FTPGui.PresentationLayer
         {
             if(this.ClientRepository.AddEntity(new Client
             {
-                Name = ClientNameTxt.Text,
-                GLN = ClientGLNTxt.Text,
-                INN = ClientINNTxt.Text,
-                KPP = ClientKPPTxt.Text
+                Name = this.Trim(ClientNameTxt.Text),
+                GLN = this.Trim(ClientGLNTxt.Text),
+                INN = this.Trim(ClientINNTxt.Text),
+                KPP = this.Trim(ClientKPPTxt.Text)
             }))
             {
                 this.UpdateClientPage();
@@ -140,6 +146,11 @@ namespace FTPGui.PresentationLayer
             }
         }
 
+        private string Trim(string str)
+        {
+            return str.Trim(' ');
+        }
+
         private void UpdateClientPage()
         {
             this.ClientsTbl.DataSource = this.ClientRepository.GetAllEntities();
@@ -147,7 +158,21 @@ namespace FTPGui.PresentationLayer
 
         private void ClientRemoveBtn_Click(object sender, EventArgs e)
         {
+            if (ClientsTbl.SelectedRows.Count == 1)
+            {
+                int id = (int)ClientsTbl.SelectedRows[0].Cells["ID"].Value;
 
+                if (!this.ClientRepository.RemoveEntity(id))
+                {
+                    MessageBox.Show("Error deleting.", "Error");
+                }
+
+                this.UpdateClientPage();
+            }
+            else
+            {
+                MessageBox.Show("You must select 1 row to delete.", "Error");
+            }
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -175,11 +200,11 @@ namespace FTPGui.PresentationLayer
         {
             if (this.SupplierRepository.AddEntity(new Supplier
             {
-                GLN = SupplierGLNTxt.Text,
-                INN = SupplierINNTxt.Text,
+                GLN = this.Trim(SupplierGLNTxt.Text),
+                INN = this.Trim(SupplierINNTxt.Text),
                 IsRoaming = SupplierRoamingChk.Checked,
-                KPP = SupplierKPPTxt.Text,
-                Name = SupplierNameTxt.Text
+                KPP = this.Trim(SupplierKPPTxt.Text),
+                Name = this.Trim(SupplierNameTxt.Text)
             }))
             {
                 this.UpdateSupplierPage();
@@ -228,5 +253,30 @@ namespace FTPGui.PresentationLayer
         private ClientRepository ClientRepository { get; set; }
         private WayBillRepository WayBillRepository { get; set; }
         private SupplierRepository SupplierRepository { get; set; }
+
+        private void SupplierRemoveBtn_Click(object sender, EventArgs e)
+        {
+            if (SupplierTbl.SelectedRows.Count == 1)
+            {
+                int id = (int)SupplierTbl.SelectedRows[0].Cells["ID"].Value;
+
+                if (!this.SupplierRepository.RemoveEntity(id))
+                {
+                    MessageBox.Show("Error deleting.", "Error");
+                }
+
+                this.UpdateClientPage();
+            }
+            else
+            {
+                MessageBox.Show("You must select 1 row to delete.", "Error");
+            }
+        }
+
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm form = new ReportForm();
+            form.Show();
+        }
     }
 }

@@ -30,7 +30,7 @@
             }
 
             bool res1 = this.WayBillRepository.AddEntity(wb);
-            bool? isRoaming = null;
+            bool isRoaming = false;
 
             try
             {
@@ -41,7 +41,7 @@
                 this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Supplier with ID " + wb.SupplierID + " not found", ex.Source, ex.Message, ex.StackTrace), LogTypes.ERROR);
             }
 
-            bool res2 = this.AccumRegisterRepository.AddEntity(wb.ClientID, wb.ID, DateTime.Now, 1, isRoaming);
+            bool res2 = this.AccumRegisterRepository.AddEntity(wb.ClientID, wb.ID, DateTime.Now, isRoaming);
             return res1 && res2;
         }
 

@@ -13,7 +13,6 @@ namespace FTPGui.PresentationLayer
 {
     using DomainModel.Model;
     using DomainModel.Logic;
-    //using BusinessLogicLayer;
 
     public partial class SettingsForm : Form
     {
@@ -35,6 +34,7 @@ namespace FTPGui.PresentationLayer
             IntervalTxt.Text = settings.FtpDownloadInttervalSec.ToString();
             PassiveChk.Checked = Convert.ToBoolean(settings.FtpIsPassive);
             ServiceNameTxt.Text = settings.ServiceName;
+            FtpTimeoutTxt.Text = settings.FtpTimeoutSec.ToString();
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace FTPGui.PresentationLayer
                     FtpDownloadInttervalSec = int.Parse(IntervalTxt.Text),
                     FtpFolder = WBFolderTxt.Text,
                     ServiceName = ServiceNameTxt.Text,
+                    FtpTimeoutSec = int.Parse(FtpTimeoutTxt.Text)
                 });
             }
             catch(FormatException)
             {
-                MessageBox.Show("Формат аргумента не допутим.", "Ошибка.");
+                MessageBox.Show("The format of the argument is not valid.", "Error");
             }
             
-
             this.Close();
         }
 

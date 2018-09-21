@@ -25,8 +25,8 @@
         public Waybill GetWaybill()
         {
             int supplierID = -1, clientID = -1;
-            DateTime docDate;
-            string number;
+            DateTime docDate = new DateTime(1970, 1, 1);
+            string number = string.Empty;
             try
             {
                 number = this.XmlRoot.SelectSingleNode(EDIDocumentStruct.DocumentNodeNames[DocumentNodes.NUMBER]).InnerText;
@@ -41,7 +41,7 @@
                 }
                 catch (FormatException ex)
                 {
-                    this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Error reading document date", ex.Source, ex.Message, ex.StackTrace));
+                    this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Error reading document date", ex.Source, ex.Message, ex.StackTrace), LogTypes.WARNING);
                     docDate = new DateTime(2000, 1, 1);
                 }
 
@@ -53,7 +53,7 @@
                 }
                 catch (NullReferenceException ex)
                 {
-                    this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Supplier with GLN " + supplierGln + " not found", ex.Source, ex.Message, ex.StackTrace));
+                    this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Supplier with GLN " + supplierGln + " not found", ex.Source, ex.Message, ex.StackTrace), LogTypes.WARNING);
                 }
 
                 try
@@ -68,8 +68,7 @@
             }
             catch (XPathException ex)
             {
-                throw ex;
-               // this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "", ex.Source, ex.Message, ex.StackTrace));
+                this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Error reading document", ex.Source, ex.Message, ex.StackTrace));
             }
 
             Waybill result = new Waybill

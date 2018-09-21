@@ -77,6 +77,12 @@
     <Compile Include="PresentationLayer\NewMainForm.Designer.cs">
       <DependentUpon>NewMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PresentationLayer\NewMainForm.resx">
       <DependentUpon>NewMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>

@@ -40,6 +40,8 @@
             this.PassiveChk = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ServiceNameTxt = new System.Windows.Forms.TextBox();
+            this.FtpTimeoutTxt = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CloseBtn
@@ -114,7 +116,7 @@
             // PassiveChk
             // 
             this.PassiveChk.AutoSize = true;
-            this.PassiveChk.Location = new System.Drawing.Point(166, 93);
+            this.PassiveChk.Location = new System.Drawing.Point(166, 119);
             this.PassiveChk.Name = "PassiveChk";
             this.PassiveChk.Size = new System.Drawing.Size(86, 17);
             this.PassiveChk.TabIndex = 17;
@@ -124,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 119);
+            this.label1.Location = new System.Drawing.Point(85, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 19;
@@ -132,10 +134,27 @@
             // 
             // ServiceNameTxt
             // 
-            this.ServiceNameTxt.Location = new System.Drawing.Point(166, 116);
+            this.ServiceNameTxt.Location = new System.Drawing.Point(166, 142);
             this.ServiceNameTxt.Name = "ServiceNameTxt";
             this.ServiceNameTxt.Size = new System.Drawing.Size(312, 20);
             this.ServiceNameTxt.TabIndex = 18;
+            // 
+            // FtpTimeoutTxt
+            // 
+            this.FtpTimeoutTxt.Location = new System.Drawing.Point(166, 93);
+            this.FtpTimeoutTxt.Mask = "00";
+            this.FtpTimeoutTxt.Name = "FtpTimeoutTxt";
+            this.FtpTimeoutTxt.Size = new System.Drawing.Size(312, 20);
+            this.FtpTimeoutTxt.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(70, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "FTP timeout, sec:";
             // 
             // SettingsForm
             // 
@@ -143,6 +162,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 223);
+            this.Controls.Add(this.FtpTimeoutTxt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ServiceNameTxt);
             this.Controls.Add(this.PassiveChk);
@@ -176,5 +197,7 @@
         private System.Windows.Forms.CheckBox PassiveChk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ServiceNameTxt;
+        private System.Windows.Forms.MaskedTextBox FtpTimeoutTxt;
+        private System.Windows.Forms.Label label2;
     }
 }

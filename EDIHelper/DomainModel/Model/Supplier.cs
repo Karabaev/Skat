@@ -11,7 +11,7 @@
         public string INN { get; set; }
         public string KPP { get; set; }
         [DisplayName("Roaming?")]
-        public bool? IsRoaming { get; set; }
+        public bool IsRoaming { get; set; }
 
         public void Reinitialization(IEntity other)
         {

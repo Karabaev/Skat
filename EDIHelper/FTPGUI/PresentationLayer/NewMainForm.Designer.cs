@@ -79,6 +79,7 @@
             this.SupplierTbl = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.WayBillsTbl = new System.Windows.Forms.DataGridView();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,7 +95,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -536,6 +538,7 @@
             this.SupplierRemoveBtn.TabIndex = 33;
             this.SupplierRemoveBtn.Text = "Remove selected";
             this.SupplierRemoveBtn.UseVisualStyleBackColor = true;
+            this.SupplierRemoveBtn.Click += new System.EventHandler(this.SupplierRemoveBtn_Click);
             // 
             // SupplierAddNewBtn
             // 
@@ -636,6 +639,13 @@
             this.WayBillsTbl.Size = new System.Drawing.Size(762, 373);
             this.WayBillsTbl.TabIndex = 26;
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
             // NewMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,5 +729,6 @@
         private System.Windows.Forms.Button TOSaveBtn;
         private System.Windows.Forms.Button ClientsSaveBtn;
         private System.Windows.Forms.Button SuppliersChangeBtn;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
     }
 }
