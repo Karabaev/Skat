@@ -1,0 +1,11 @@
+﻿<xs:schema xmlns:tns="http://www.1c.ru/EDI" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.1c.ru/EDI" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="Document" type="xs:Document"/>
+	<xs:complexType name="TradeObject">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string"/>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="GLN" type="xs:string"/>
+			<xs:element name="ClientID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

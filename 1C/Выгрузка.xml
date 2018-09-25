@@ -1,0 +1,24 @@
+﻿<Document xmlns="http://www.1c.ru/EDI" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TradeObjects>
+		<TradeObject>
+			<Code>1</Code>
+			<Name>Тест1</Name>
+			<GLN>2214124</GLN>
+			<FtpLogin></FtpLogin>
+			<FtpPassword></FtpPassword>
+			<LocalFolder></LocalFolder>
+			<Address></Address>
+			<ClientINN></ClientINN>
+		</TradeObject>
+		<TradeObject>
+			<Code>2</Code>
+			<Name>Тест2</Name>
+			<GLN>2214124</GLN>
+			<FtpLogin></FtpLogin>
+			<FtpPassword></FtpPassword>
+			<LocalFolder></LocalFolder>
+			<Address></Address>
+			<ClientCode></ClientCode>
+		</TradeObject>
+	</TradeObjects>
+</Document>
