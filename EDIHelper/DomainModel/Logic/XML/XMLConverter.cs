@@ -17,7 +17,6 @@
             this.SupplierRepository = new SupplierRepository();
             this.ClientRepository = new ClientRepository();
             this.FileContent = Encoding.GetEncoding("windows-1251").GetString(bytes.ToArray());
-            //this.FileContent = Encoding.UTF8.GetString(bytes.ToArray());
             this.XmlDocument = new XmlDocument();
             this.XmlDocument.LoadXml(this.FileContent);
             this.XmlRoot = this.XmlDocument.DocumentElement;

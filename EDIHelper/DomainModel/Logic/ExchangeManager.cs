@@ -41,10 +41,10 @@
             {
                 bytesAr = File.ReadAllBytes(Path.Combine(this.ExchangeFolder, this.DownloadFileName));
             }
-            catch(FileNotFoundException)
+            catch(FileNotFoundException ex)
             {
                 this.Logger.WriteLog("Download file not found");
-                return;
+                throw ex;
             }
             this.Logger.WriteLog("Download file found");
 
@@ -57,6 +57,7 @@
             this.LoadClients(converter);
             this.LoadSuppliers(converter);
             this.LoadTradeObjects(converter);
+            File.Move(Path.Combine(this.ExchangeFolder, this.DownloadFileName), Path.Combine(this.ExchangeFolder, this.DownloadFileName + DateTime.Now.ToString("ddMMyyyy_hhmmss")));
         }
 
         /// <summary>

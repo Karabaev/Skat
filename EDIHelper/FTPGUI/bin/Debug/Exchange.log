@@ -46,3 +46,87 @@
 26.09.2018 15:43:10: INFO Downloading clients.
 26.09.2018 15:43:12: INFO Downloading suppliers.
 26.09.2018 15:43:12: INFO Downloading trade objects.
+26.09.2018 16:17:27: INFO Checking download file.
+26.09.2018 16:17:27: INFO Download file found.
+26.09.2018 16:17:27: INFO Downloading clients.
+26.09.2018 16:17:28: INFO Downloading suppliers.
+26.09.2018 16:17:29: INFO Downloading trade objects.
+26.09.2018 16:18:20: INFO Checking download file.
+26.09.2018 16:18:20: INFO Download file found.
+26.09.2018 16:18:20: INFO Downloading clients.
+26.09.2018 16:18:20: INFO Downloading suppliers.
+26.09.2018 16:18:20: INFO Downloading trade objects.
+26.09.2018 16:25:14: INFO Checking download file.
+26.09.2018 16:25:14: INFO Download file found.
+26.09.2018 16:25:14: INFO Downloading clients.
+26.09.2018 16:25:14: INFO Downloading suppliers.
+26.09.2018 16:25:14: INFO Downloading trade objects.
+26.09.2018 16:30:35: INFO Checking download file.
+26.09.2018 16:30:35: INFO Download file found.
+26.09.2018 16:30:35: INFO Downloading clients.
+26.09.2018 16:30:35: INFO Downloading suppliers.
+26.09.2018 16:30:35: INFO Downloading trade objects.
+26.09.2018 16:40:07: INFO Checking download file.
+26.09.2018 16:40:07: INFO Download file found.
+26.09.2018 16:40:07: INFO Downloading clients.
+26.09.2018 16:40:07: INFO Downloading suppliers.
+26.09.2018 16:40:07: INFO Downloading trade objects.
+26.09.2018 16:40:37: INFO Checking download file.
+26.09.2018 16:40:37: INFO Download file not found.
+26.09.2018 16:50:20: INFO Checking download file.
+26.09.2018 16:50:20: INFO Download file found.
+26.09.2018 16:50:20: INFO Downloading clients.
+26.09.2018 16:50:21: INFO Downloading suppliers.
+26.09.2018 16:50:21: INFO Downloading trade objects.
+26.09.2018 16:50:21: ERROR Downloading error: mscorlib: Данный формат пути не поддерживается.,    в System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   в System.Security.Permissions.FileIOPermission.QuickDemand(FileIOPermissionAccess access, String fullPath, Boolean checkForDuplicates, Boolean needFullPath)
+   в System.IO.File.InternalMove(String sourceFileName, String destFileName, Boolean checkHost)
+   в DomainModel.Logic.ExchangeManager.LoadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 60
+   в FTPGui.PresentationLayer.ExchangeForm.DownloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 34.
+26.09.2018 16:57:13: INFO Checking download file.
+26.09.2018 16:57:13: INFO Download file found.
+26.09.2018 16:57:13: INFO Downloading clients.
+26.09.2018 16:57:14: INFO Downloading suppliers.
+26.09.2018 16:57:14: INFO Downloading trade objects.
+26.09.2018 17:07:32: INFO Checking download file.
+26.09.2018 17:07:32: INFO Download file found.
+26.09.2018 17:07:32: INFO Downloading clients.
+26.09.2018 17:07:33: INFO Downloading suppliers.
+26.09.2018 17:07:33: INFO Downloading trade objects.
+26.09.2018 17:07:33: ERROR Downloading error: mscorlib: Невозможно создать файл, так как он уже существует.
+,    в System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   в System.IO.File.InternalMove(String sourceFileName, String destFileName, Boolean checkHost)
+   в DomainModel.Logic.ExchangeManager.LoadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 60
+   в FTPGui.PresentationLayer.ExchangeForm.DownloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 34.
+26.09.2018 17:07:45: INFO Checking download file.
+26.09.2018 17:07:45: INFO Download file found.
+26.09.2018 17:07:45: INFO Downloading clients.
+26.09.2018 17:07:45: INFO Downloading suppliers.
+26.09.2018 17:07:45: INFO Downloading trade objects.
+26.09.2018 17:07:46: ERROR Downloading error: mscorlib: Невозможно создать файл, так как он уже существует.
+,    в System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   в System.IO.File.InternalMove(String sourceFileName, String destFileName, Boolean checkHost)
+   в DomainModel.Logic.ExchangeManager.LoadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 60
+   в FTPGui.PresentationLayer.ExchangeForm.DownloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 34.
+26.09.2018 17:08:22: INFO Checking download file.
+26.09.2018 17:08:22: INFO Download file found.
+26.09.2018 17:08:22: INFO Downloading clients.
+26.09.2018 17:08:22: INFO Downloading suppliers.
+26.09.2018 17:08:22: INFO Downloading trade objects.
+26.09.2018 17:13:13: INFO Checking download file.
+26.09.2018 17:13:13: INFO Download file found.
+26.09.2018 17:13:13: INFO Downloading clients.
+26.09.2018 17:13:13: INFO Downloading suppliers.
+26.09.2018 17:13:14: INFO Downloading trade objects.
+26.09.2018 17:13:22: INFO Checking download file.
+26.09.2018 17:13:22: INFO Download file found.
+26.09.2018 17:13:22: INFO Downloading clients.
+26.09.2018 17:13:22: INFO Downloading suppliers.
+26.09.2018 17:13:22: INFO Downloading trade objects.
+26.09.2018 17:19:41: INFO Checking download file.
+26.09.2018 17:19:41: INFO Download file found.
+26.09.2018 17:19:41: INFO Downloading clients.
+26.09.2018 17:19:41: INFO Downloading suppliers.
+26.09.2018 17:19:42: INFO Downloading trade objects.
+26.09.2018 17:19:44: INFO Checking download file.
+26.09.2018 17:19:44: INFO Download file not found.

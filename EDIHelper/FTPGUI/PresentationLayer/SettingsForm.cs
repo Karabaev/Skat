@@ -65,6 +65,7 @@ namespace FTPGui.PresentationLayer
             catch(FormatException)
             {
                 MessageBox.Show("The format of the argument is not valid.", "Error");
+                return;
             }
             
             this.Close();

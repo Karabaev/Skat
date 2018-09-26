@@ -11,6 +11,7 @@
     using System.Windows.Forms;
     using DomainModel.Logic;
     using DomainModel.Model;
+    using System.IO;
 
     public partial class ExchangeForm : Form
     {
@@ -32,11 +33,18 @@
             {
                 this.ExchangeManager.LoadAll();
             }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("File not found.", "Error");
+                return;
+            }
             catch(Exception ex)
             {
                 this.Logger.WriteLog(string.Format("{0}: {1}: {2}, {3}", "Downloading error", ex.Source, ex.Message, ex.StackTrace), LogTypes.ERROR);
+                MessageBox.Show(string.Format("{0}: {1}. {2}", ex.Source, ex.Message, ex.StackTrace), "Error");
+                return;
             }
-            
+            MessageBox.Show("Success!", "Success");
         }
 
         private Logger Logger { get; set; }
