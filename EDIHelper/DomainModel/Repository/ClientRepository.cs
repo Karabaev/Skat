@@ -53,6 +53,19 @@
             return this.SaveChanges();
         }
 
+        public bool AddOrUpdateEntity(Client entity)
+        {
+            Client client = this.Context.Clients.Where(c => c.ExCode == entity.ExCode).FirstOrDefault();
+
+            if(client != null)
+            {
+                client.Reinitialization(entity);
+                return SaveChanges();
+            }
+
+            return this.AddEntity(entity);
+        }
+
         public bool SaveChanges()
         {
             return this.Context.SaveChanges() > 0;

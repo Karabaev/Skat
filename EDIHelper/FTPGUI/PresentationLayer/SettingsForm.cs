@@ -35,6 +35,9 @@ namespace FTPGui.PresentationLayer
             PassiveChk.Checked = Convert.ToBoolean(settings.FtpIsPassive);
             ServiceNameTxt.Text = settings.ServiceName;
             FtpTimeoutTxt.Text = settings.FtpTimeoutSec.ToString();
+            ExchFolderTxt.Text = settings.ExchangeFolder;
+            DownFileNameTxt.Text = settings.DownloadExchangeFileName;
+            UpFileNameTxt.Text = settings.UploadExchangeFileName;
         }
 
         /// <summary>
@@ -53,8 +56,11 @@ namespace FTPGui.PresentationLayer
                     FtpDownloadInttervalSec = int.Parse(IntervalTxt.Text),
                     FtpFolder = WBFolderTxt.Text,
                     ServiceName = ServiceNameTxt.Text,
-                    FtpTimeoutSec = int.Parse(FtpTimeoutTxt.Text)
-                });
+                    FtpTimeoutSec = int.Parse(FtpTimeoutTxt.Text),
+                    ExchangeFolder = ExchFolderTxt.Text,
+                    DownloadExchangeFileName = DownFileNameTxt.Text,
+                    UploadExchangeFileName = UpFileNameTxt.Text
+            });
             }
             catch(FormatException)
             {

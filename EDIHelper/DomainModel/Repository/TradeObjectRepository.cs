@@ -91,6 +91,28 @@
             return this.SaveChanges();
         }
 
+        /// <summary>
+        /// Обновить или добавить запись. Обновление записи происходит, если в базе уже сущестует торговый объект с указанным внешним кодом.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public bool AddOrUpdateEntity(TradeObject entity)
+        {
+            TradeObject tradeObject = this.Context.TradeObjects.Where(c => c.ExCode == entity.ExCode).FirstOrDefault();
+
+            if (tradeObject != null)
+            {
+                tradeObject.Reinitialization(entity);
+                return SaveChanges();
+            }
+
+            return this.AddEntity(entity);
+        }
+
+        /// <summary>
+        /// Применить изменения.
+        /// </summary>
+        /// <returns>true, если изменена одна и большей записей, иначе false.</returns>
         public bool SaveChanges()
         {
             return this.Context.SaveChanges() > 0;

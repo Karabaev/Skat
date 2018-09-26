@@ -6,6 +6,7 @@
     public class Waybill : IEntity
     {
         public int ID { get; set; }
+        public string ExCode { get; set; }
         public string Number { get; set; }
         public int SupplierID { get; set; }
         public int ClientID { get; set; }
@@ -48,7 +49,8 @@
 
         public override string ToString()
         {
-            return base.ToString();
+            return string.Format("ID: {0}, Number: {1}, SupplierID: {2}, ClientID: {3}, DocumentDate: {4}, DownloadDate: {5}",
+                this.ID, this.Number, this.SupplierID, this.ClientID, this.DocumentDate, this.DownloadDate);
         }
     }
 }

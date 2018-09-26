@@ -1,0 +1,48 @@
+26.09.2018 15:20:57: INFO Checking download file.
+26.09.2018 15:20:58: INFO Download file not found.
+26.09.2018 15:24:22: INFO Checking download file.
+26.09.2018 15:24:22: INFO Download file found.
+26.09.2018 15:28:14: INFO Checking download file.
+26.09.2018 15:28:14: INFO Download file found.
+26.09.2018 15:28:14: ERROR Downloading error: System.Xml: Недопустимые данные на корневом уровне., строка 1, позиция 1.,    в System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   в System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   в System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   в System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   в System.Xml.XmlDocument.Load(XmlReader reader)
+   в System.Xml.XmlDocument.LoadXml(String xml)
+   в DomainModel.Logic.XML.XMLConverter..ctor(List`1 bytes, Logger logger) в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 22
+   в DomainModel.Logic.ExchangeManager.LoadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 53
+   в FTPGui.PresentationLayer.ExchangeForm.DownloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 33.
+26.09.2018 15:30:32: INFO Checking download file.
+26.09.2018 15:30:32: INFO Download file found.
+26.09.2018 15:30:32: INFO Downloading clients.
+26.09.2018 15:30:32: WARNING Error downloading clients: DomainModel: Ссылка на объект не указывает на экземпляр объекта..    в DomainModel.Logic.ExchangeManager.LoadClients(XMLConverter converter) в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 70.
+26.09.2018 15:30:32: INFO Downloading suppliers.
+26.09.2018 15:30:32: WARNING Error downloading suppliers: DomainModel: Ссылка на объект не указывает на экземпляр объекта..    в DomainModel.Logic.ExchangeManager.LoadSuppliers(XMLConverter converter) в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 91.
+26.09.2018 15:30:32: INFO Downloading trade objects.
+26.09.2018 15:30:32: WARNING Error downloading trade objects: DomainModel: Ссылка на объект не указывает на экземпляр объекта..    в DomainModel.Logic.ExchangeManager.LoadTradeObjects(XMLConverter converter) в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 111.
+26.09.2018 15:32:05: INFO Checking download file.
+26.09.2018 15:32:05: INFO Download file found.
+26.09.2018 15:32:05: INFO Downloading clients.
+26.09.2018 15:32:06: INFO Downloading suppliers.
+26.09.2018 15:32:06: INFO Downloading trade objects.
+26.09.2018 15:33:11: INFO Checking download file.
+26.09.2018 15:33:11: INFO Download file found.
+26.09.2018 15:33:11: INFO Downloading clients.
+26.09.2018 15:33:11: INFO Downloading suppliers.
+26.09.2018 15:33:11: INFO Downloading trade objects.
+26.09.2018 15:34:04: INFO Checking download file.
+26.09.2018 15:34:04: INFO Download file found.
+26.09.2018 15:34:04: INFO Downloading clients.
+26.09.2018 15:34:04: INFO Downloading suppliers.
+26.09.2018 15:34:04: INFO Downloading trade objects.
+26.09.2018 15:34:56: INFO Checking download file.
+26.09.2018 15:34:56: INFO Download file found.
+26.09.2018 15:34:56: INFO Downloading clients.
+26.09.2018 15:35:29: INFO Downloading suppliers.
+26.09.2018 15:42:52: INFO Downloading trade objects.
+26.09.2018 15:43:10: INFO Checking download file.
+26.09.2018 15:43:10: INFO Download file found.
+26.09.2018 15:43:10: INFO Downloading clients.
+26.09.2018 15:43:12: INFO Downloading suppliers.
+26.09.2018 15:43:12: INFO Downloading trade objects.

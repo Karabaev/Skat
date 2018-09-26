@@ -43,3 +43,4 @@ C:\Доработки\EDIHelper\FTPGUI\bin\Debug\EntityFramework.SqlServer.xml
 C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.xml
 C:\Доработки\EDIHelper\FTPGUI\bin\Debug\System.Data.SQLite.dll.config
 C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.PresentationLayer.ReportForm.resources
+C:\Доработки\EDIHelper\FTPGUI\obj\Debug\FTPGui.PresentationLayer.ExchangeForm.resources

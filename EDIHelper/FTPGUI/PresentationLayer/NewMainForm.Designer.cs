@@ -30,6 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exchangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.TOSaveBtn = new System.Windows.Forms.Button();
@@ -79,7 +81,6 @@
             this.SupplierTbl = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.WayBillsTbl = new System.Windows.Forms.DataGridView();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -96,7 +97,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.exchangeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -109,6 +111,20 @@
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
+            // 
+            // exchangeToolStripMenuItem
+            // 
+            this.exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
+            this.exchangeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.exchangeToolStripMenuItem.Text = "Exchange";
+            this.exchangeToolStripMenuItem.Click += new System.EventHandler(this.exchangeToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -222,7 +238,7 @@
             // TORemoveBtn
             // 
             this.TORemoveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TORemoveBtn.Location = new System.Drawing.Point(598, 341);
+            this.TORemoveBtn.Location = new System.Drawing.Point(595, 341);
             this.TORemoveBtn.Name = "TORemoveBtn";
             this.TORemoveBtn.Size = new System.Drawing.Size(75, 38);
             this.TORemoveBtn.TabIndex = 11;
@@ -639,13 +655,6 @@
             this.WayBillsTbl.Size = new System.Drawing.Size(762, 373);
             this.WayBillsTbl.TabIndex = 26;
             // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
-            // 
             // NewMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,5 +739,6 @@
         private System.Windows.Forms.Button ClientsSaveBtn;
         private System.Windows.Forms.Button SuppliersChangeBtn;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exchangeToolStripMenuItem;
     }
 }

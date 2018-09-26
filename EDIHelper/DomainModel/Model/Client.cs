@@ -3,6 +3,7 @@
     public class Client : ICounteragent
     {
         public int ID { get; set; }
+        public string ExCode { get; set; }
         public string Name { get; set; }
         public string GLN { get; set; }
         public string INN { get; set; }
@@ -16,6 +17,7 @@
             }
 
             this.Name = newClient.Name;
+            this.ExCode = newClient.ExCode;
             this.GLN = newClient.GLN;
             this.INN = newClient.INN;
             this.KPP = newClient.KPP;
@@ -24,7 +26,6 @@
         public override bool Equals(object other)
         {
             Client client = other as Client;
-
             return client != null && this.ID == client.ID && this.Name == client.Name && this.GLN == client.GLN && this.INN == client.INN && this.KPP == client.KPP;
         }
 

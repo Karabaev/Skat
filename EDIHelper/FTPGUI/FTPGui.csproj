@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PresentationLayer\ExchangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ExchangeForm.Designer.cs">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\NewMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\ExchangeForm.resx">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\NewMainForm.resx">
       <DependentUpon>NewMainForm.cs</DependentUpon>
     </EmbeddedResource>

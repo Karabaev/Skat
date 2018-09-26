@@ -8,6 +8,7 @@ namespace ModelTest
     using DomainModel.Model;
     using DomainModel.Logic;
     using System.IO;
+    using System.Linq;
 
     [TestClass]
     public class XMLConverterTest
@@ -41,7 +42,6 @@ namespace ModelTest
             Assert.IsTrue(expectedWayBill.LikeAs(waybill));
         }
 
-        
         [TestMethod]
         public void GetWayBillSupplierNotExistTest()
         {
@@ -66,6 +66,64 @@ namespace ModelTest
             };
 
             Assert.IsTrue(expectedWayBill.LikeAs(waybill));
+        }
+
+        [TestMethod]
+        public void GetClientsTest()
+        {
+            List<Client> expectedClients = new List<Client>();
+            expectedClients.Add(new Client { Name = "Поликарпов", GLN = "54525432523524", INN = "1841040275", KPP = "123456789" });
+            expectedClients.Add(new Client { Name = "Поликон", GLN = "131234441424141", INN = "1841040275", KPP = "123456789" });
+
+            List<byte> bytes = new List<byte>();
+            var bytesAr = File.ReadAllBytes("TestExchange.xml");
+
+            foreach (var item in bytesAr)
+            {
+                bytes.Add(item);
+            }
+
+            XMLConverter converter = new XMLConverter(bytes, new Logger("Log.log", "Testing"));
+
+            List<Client> gettedClients = converter.GetClients();
+
+            if(expectedClients.Count != gettedClients.Count)
+            {
+                Assert.Fail("Количество клиентов не совпадает");
+            }
+
+            Assert.IsTrue(expectedClients.All(gettedClients.Contains));
+        }
+
+        [TestMethod]
+        public void GetSuppliersTest()
+        {
+            List<Supplier> expecterSuppliers = new List<Supplier>();
+            expecterSuppliers.Add(new Supplier { Name = "Комос", GLN = "2313214214214", INN = "1234567890", KPP = "12345678", IsRoaming = false });
+            expecterSuppliers.Add(new Supplier { Name = "Не комос", GLN = "2424422", INN = "123456355", KPP = "123548", IsRoaming = true });
+
+            List<byte> bytes = new List<byte>();
+            var bytesAr = File.ReadAllBytes("TestExchange.xml");
+
+            foreach (var item in bytesAr)
+            {
+                bytes.Add(item);
+            }
+
+            XMLConverter converter = new XMLConverter(bytes, new Logger("Log.log", "Testing"));
+
+            List<Supplier> gettedSuppliers = converter.GetSuppliers();
+
+            if (expecterSuppliers.Count != gettedSuppliers.Count)
+            {
+                Assert.Fail("Количество клиентов не совпадает");
+            }
+
+            foreach (var item in expecterSuppliers)
+                Console.WriteLine(item);
+            foreach (var item in gettedSuppliers)
+                Console.WriteLine(item);
+            Assert.IsTrue(expecterSuppliers.All(gettedSuppliers.Contains));
         }
     }
 }

@@ -70,6 +70,19 @@ namespace DomainModel.Repository
             return this.SaveChanges();
         }
 
+        public bool AddOrUpdateEntity(Supplier entity)
+        {
+            Supplier supplier = this.Context.Suppliers.Where(c => c.ExCode == entity.ExCode).FirstOrDefault();
+
+            if (supplier != null)
+            {
+                supplier.Reinitialization(entity);
+                return SaveChanges();
+            }
+
+            return this.AddEntity(entity);
+        }
+
         public bool SaveChanges()
         {
             return this.Context.SaveChanges() > 0;

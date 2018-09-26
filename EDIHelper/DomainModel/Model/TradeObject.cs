@@ -6,6 +6,7 @@
     public class TradeObject : IEntity
     {
         public int ID { get; set; }
+        public string ExCode { get; set; }
         public string Name { get; set; }
         public string FtpLogin { get; set; }
         public string FtpPassword { get; set; }
@@ -23,6 +24,7 @@
             }
 
             this.Name = newTO.Name;
+            this.ExCode = newTO.ExCode;
             this.FtpLogin = newTO.Name;
             this.FtpPassword = newTO.FtpPassword;
             this.LocalFolder = newTO.LocalFolder;

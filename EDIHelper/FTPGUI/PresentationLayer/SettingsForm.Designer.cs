@@ -42,11 +42,19 @@
             this.ServiceNameTxt = new System.Windows.Forms.TextBox();
             this.FtpTimeoutTxt = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ExchFolderTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.DownFileNameTxt = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.UpFileNameTxt = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(261, 188);
+            this.CloseBtn.Location = new System.Drawing.Point(261, 297);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Size = new System.Drawing.Size(97, 23);
             this.CloseBtn.TabIndex = 0;
@@ -88,7 +96,7 @@
             // 
             // CloseWithoutSaveBtn
             // 
-            this.CloseWithoutSaveBtn.Location = new System.Drawing.Point(364, 188);
+            this.CloseWithoutSaveBtn.Location = new System.Drawing.Point(364, 297);
             this.CloseWithoutSaveBtn.Name = "CloseWithoutSaveBtn";
             this.CloseWithoutSaveBtn.Size = new System.Drawing.Size(114, 23);
             this.CloseWithoutSaveBtn.TabIndex = 13;
@@ -156,12 +164,76 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "FTP timeout, sec:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.UpFileNameTxt);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.DownFileNameTxt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.ExchFolderTxt);
+            this.groupBox1.Location = new System.Drawing.Point(12, 168);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(466, 100);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Exchange settings";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Exchange folder:";
+            // 
+            // ExchFolderTxt
+            // 
+            this.ExchFolderTxt.Location = new System.Drawing.Point(148, 19);
+            this.ExchFolderTxt.Name = "ExchFolderTxt";
+            this.ExchFolderTxt.Size = new System.Drawing.Size(312, 20);
+            this.ExchFolderTxt.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Download file name:";
+            // 
+            // DownFileNameTxt
+            // 
+            this.DownFileNameTxt.Location = new System.Drawing.Point(148, 45);
+            this.DownFileNameTxt.Name = "DownFileNameTxt";
+            this.DownFileNameTxt.Size = new System.Drawing.Size(312, 20);
+            this.DownFileNameTxt.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(53, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Upload file name:";
+            // 
+            // UpFileNameTxt
+            // 
+            this.UpFileNameTxt.Location = new System.Drawing.Point(148, 71);
+            this.UpFileNameTxt.Name = "UpFileNameTxt";
+            this.UpFileNameTxt.Size = new System.Drawing.Size(312, 20);
+            this.UpFileNameTxt.TabIndex = 27;
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.CloseBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 223);
+            this.ClientSize = new System.Drawing.Size(490, 332);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.FtpTimeoutTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -178,6 +250,8 @@
             this.Name = "SettingsForm";
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +273,12 @@
         private System.Windows.Forms.TextBox ServiceNameTxt;
         private System.Windows.Forms.MaskedTextBox FtpTimeoutTxt;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox UpFileNameTxt;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox DownFileNameTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ExchFolderTxt;
     }
 }

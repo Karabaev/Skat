@@ -278,5 +278,11 @@
             ReportForm form = new ReportForm();
             form.Show();
         }
+
+        private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExchangeForm form = new ExchangeForm();
+            form.ShowDialog(this);
+        }
     }
 }
