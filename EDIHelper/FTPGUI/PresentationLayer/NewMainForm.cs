@@ -271,6 +271,7 @@
             {
                 MessageBox.Show("You must select 1 row to delete.", "Error");
             }
+            this.UpdateSupplierPage();
         }
 
         private void reportsToolStripMenuItem_Click(object sender, EventArgs e)

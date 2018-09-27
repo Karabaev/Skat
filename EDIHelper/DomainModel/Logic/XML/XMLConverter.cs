@@ -231,7 +231,10 @@
         public XDocument GetXmlAll()
         {
             XDocument xDoc = new XDocument();
-            XElement document = new XElement(XmlParser.XmlTagNames[XmlTags.Document]);
+
+           
+            XElement document = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Document]);
+           
             document.Add(this.GetXmlWaybills());
             xDoc.Add(document);
             return xDoc;
@@ -239,13 +242,13 @@
 
         private XElement GetXmlWaybills()
         {
-            XElement waybills = new XElement(XmlParser.XmlTagNames[XmlTags.WayBills]);
+            XElement waybills = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.WayBills]);
 
             foreach (var item in this.WayBillRepository.GetAllEntities())
             {
-                XElement waybill = new XElement(XmlParser.XmlTagNames[XmlTags.WayBill]);
-                XElement code = new XElement(XmlParser.XmlTagNames[XmlTags.Code], item.ExCode);
-                XElement number = new XElement(XmlParser.XmlTagNames[XmlTags.Number], item.Number);
+                XElement waybill = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.WayBill]);
+                XElement code = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Code], item.ExCode);
+                XElement number = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Number], item.Number);
 
                 string supCode = string.Empty;
 
@@ -258,7 +261,7 @@
                     this.Logger.WriteLog(string.Format("Supplier with ID: {0} not found.", item.SupplierID));
                 }
                 
-                XElement supplierCode = new XElement(XmlParser.XmlTagNames[XmlTags.SupplierCode], supCode);
+                XElement supplierCode = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.SupplierCode], supCode);
 
                 string clCode = string.Empty;
                 try
@@ -270,9 +273,9 @@
                     this.Logger.WriteLog(string.Format("Client with ID: {0} not found.", item.ClientID));
                 }
 
-                XElement clientCode = new XElement(XmlParser.XmlTagNames[XmlTags.ClientCode], clCode);
-                XElement documentDate = new XElement(XmlParser.XmlTagNames[XmlTags.DocumentDate], item.DocumentDate.ToString("yyyy-MM-dd"));
-                XElement downloadDate = new XElement(XmlParser.XmlTagNames[XmlTags.DownloadDate], item.DownloadDate.ToString("yyyy-MM-dd hh:mm:ss"));
+                XElement clientCode = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.ClientCode], clCode);
+                XElement documentDate = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.DocumentDate], item.DocumentDate.ToString("yyyy-MM-dd"));
+                XElement downloadDate = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.DownloadDate], item.DownloadDate.ToString("yyyy-MM-dd hh:mm:ss"));
                 waybill.Add(code, number, supplierCode, clientCode, documentDate, downloadDate);
                 waybills.Add(waybill);
             }
@@ -284,6 +287,7 @@
         private string FileContent { get; set; }
         private XmlDocument XmlDocument { get; set; }
         private XmlElement XmlRoot { get; set; }
+        private XNamespace XNamespace { get; set; } = "http://www.1c.ru/EDI/Download";
         private SupplierRepository SupplierRepository { get; set; }
         private ClientRepository ClientRepository { get; set; }
         private WayBillRepository WayBillRepository { get; set; }

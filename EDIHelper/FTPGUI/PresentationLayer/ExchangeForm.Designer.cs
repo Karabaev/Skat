@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.DownloadBtn = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.UnloadBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DownloadBtn
@@ -44,20 +42,26 @@
             this.DownloadBtn.UseVisualStyleBackColor = true;
             this.DownloadBtn.Click += new System.EventHandler(this.DownloadBtn_Click);
             // 
-            // errorProvider1
+            // UnloadBtn
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.UnloadBtn.Location = new System.Drawing.Point(339, 71);
+            this.UnloadBtn.Name = "UnloadBtn";
+            this.UnloadBtn.Size = new System.Drawing.Size(75, 23);
+            this.UnloadBtn.TabIndex = 1;
+            this.UnloadBtn.Text = "Unload";
+            this.UnloadBtn.UseVisualStyleBackColor = true;
+            this.UnloadBtn.Click += new System.EventHandler(this.UnloadBtn_Click);
             // 
             // ExchangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 106);
+            this.Controls.Add(this.UnloadBtn);
             this.Controls.Add(this.DownloadBtn);
             this.Name = "ExchangeForm";
             this.Text = "Exchange";
             this.Load += new System.EventHandler(this.ExchangeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -65,6 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button DownloadBtn;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button UnloadBtn;
     }
 }

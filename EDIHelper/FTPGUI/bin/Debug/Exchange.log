@@ -130,3 +130,121 @@
 26.09.2018 17:19:42: INFO Downloading trade objects.
 26.09.2018 17:19:44: INFO Checking download file.
 26.09.2018 17:19:44: INFO Download file not found.
+27.09.2018 15:08:25: ERROR Unloading error: mscorlib: Значение не может быть неопределенным.
+Имя параметра: path2,    в System.IO.Path.Combine(String path1, String path2)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 15:09:01: INFO Checking download file.
+27.09.2018 15:09:01: INFO Download file not found.
+27.09.2018 16:09:42: INFO Checking download file.
+27.09.2018 16:09:42: INFO Download file found.
+27.09.2018 16:09:42: INFO Downloading clients.
+27.09.2018 16:09:43: INFO Downloading suppliers.
+27.09.2018 16:09:43: INFO Downloading trade objects.
+27.09.2018 16:23:38: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 236
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 16:25:06: INFO Checking download file.
+27.09.2018 16:25:06: INFO Download file not found.
+27.09.2018 16:25:08: ERROR Unloading error: mscorlib: Значение не может быть неопределенным.
+Имя параметра: path2,    в System.IO.Path.Combine(String path1, String path2)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 16:25:25: ERROR Unloading error: System.Xml: Префикс "" не может быть переопределен с "" на ""http://www.1c.ru/EDI/Download"" внутри того же начального тега элемента.,    в System.Xml.XmlWellFormedWriter.PushNamespaceExplicit(String prefix, String ns)
+   в System.Xml.XmlWellFormedWriter.WriteEndAttribute()
+   в System.Xml.Linq.ElementWriter.WriteStartElement(XElement e)
+   в System.Xml.Linq.ElementWriter.WriteElement(XElement e)
+   в System.Xml.Linq.XElement.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XContainer.WriteContentTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.Save(String fileName, SaveOptions options)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 16:28:18: ERROR Unloading error: mscorlib: Значение не может быть неопределенным.
+Имя параметра: path2,    в System.IO.Path.Combine(String path1, String path2)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 16:28:39: ERROR Unloading error: System.Xml: Префикс "" не может быть переопределен с "" на "http://www.1c.ru/EDI/Download" внутри того же начального тега элемента.,    в System.Xml.XmlWellFormedWriter.PushNamespaceExplicit(String prefix, String ns)
+   в System.Xml.XmlWellFormedWriter.WriteEndAttribute()
+   в System.Xml.Linq.ElementWriter.WriteStartElement(XElement e)
+   в System.Xml.Linq.ElementWriter.WriteElement(XElement e)
+   в System.Xml.Linq.XElement.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XContainer.WriteContentTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.Save(String fileName, SaveOptions options)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 16:29:20: ERROR Unloading error: System.Xml: Префикс "" не может быть переопределен с "" на "http://www.1c.ru/EDI/Download" внутри того же начального тега элемента.,    в System.Xml.XmlWellFormedWriter.PushNamespaceExplicit(String prefix, String ns)
+   в System.Xml.XmlWellFormedWriter.WriteEndAttribute()
+   в System.Xml.Linq.ElementWriter.WriteStartElement(XElement e)
+   в System.Xml.Linq.ElementWriter.WriteElement(XElement e)
+   в System.Xml.Linq.XElement.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XContainer.WriteContentTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.WriteTo(XmlWriter writer)
+   в System.Xml.Linq.XDocument.Save(String fileName, SaveOptions options)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:00:12: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 239
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:01:58: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 238
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:02:53: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 238
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:03:33: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 238
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:05:12: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 238
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:05:19: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 238
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:06:05: ERROR Unloading error: System.Xml: Знак ":", шестнадцатеричное значение 0x3A, не может использоваться в именах.,    в System.Xml.XmlConvert.VerifyNCName(String name, ExceptionType exceptionType)
+   в System.Xml.Linq.XName..ctor(XNamespace ns, String localName)
+   в System.Xml.Linq.XNamespace.GetName(String localName, Int32 index, Int32 count)
+   в DomainModel.Logic.XML.XMLConverter.GetXmlAll() в C:\Доработки\EDIHelper\DomainModel\Logic\XML\XMLConverter.cs:строка 239
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
+27.09.2018 17:09:27: ERROR Unloading error: mscorlib: Значение не может быть неопределенным.
+Имя параметра: path2,    в System.IO.Path.Combine(String path1, String path2)
+   в DomainModel.Logic.ExchangeManager.UnloadWayBills() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 140
+   в DomainModel.Logic.ExchangeManager.UnloadAll() в C:\Доработки\EDIHelper\DomainModel\Logic\ExchangeManager.cs:строка 129
+   в FTPGui.PresentationLayer.ExchangeForm.UnloadBtn_Click(Object sender, EventArgs e) в C:\Доработки\EDIHelper\FTPGUI\PresentationLayer\ExchangeForm.cs:строка 47.
