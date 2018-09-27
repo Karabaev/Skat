@@ -2,10 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Xml;
-    using System.Xml.XPath;
 
     public enum XmlTags
     {
@@ -32,7 +29,13 @@
         HEAD, // заголовок накладной
         BUYER, // покупатель накладной
         SUPPLIER, // поставщик накладной
-        DELIVERYPLACE // ТО накладной
+        DELIVERYPLACE, // ТО накладной
+        WayBills, // накладные для выгрузки
+        WayBill, // накладная для выгрузки
+        Number,
+        SupplierCode,
+        DocumentDate,
+        DownloadDate
     }
 
     public static class XmlParser
@@ -64,6 +67,12 @@
             XmlParser.XmlTagNames.Add(XmlTags.BUYER, XmlTags.BUYER.ToString());
             XmlParser.XmlTagNames.Add(XmlTags.SUPPLIER, XmlTags.SUPPLIER.ToString());
             XmlParser.XmlTagNames.Add(XmlTags.DELIVERYPLACE, XmlTags.DELIVERYPLACE.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.WayBills, XmlTags.WayBills.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.WayBill, XmlTags.WayBill.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.Number, XmlTags.Number.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.SupplierCode, XmlTags.SupplierCode.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.DocumentDate, XmlTags.DocumentDate.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.DownloadDate, XmlTags.DownloadDate.ToString());
         }
 
         public static XmlElement GetXmlNode(XmlElement curNode, XmlTags tag, int entranceNumber = 0)
@@ -116,6 +125,6 @@
             }
         }
 
-        private static Dictionary<XmlTags, string> XmlTagNames { get; set; }
+        public static Dictionary<XmlTags, string> XmlTagNames { get; private set; }
     }
 }

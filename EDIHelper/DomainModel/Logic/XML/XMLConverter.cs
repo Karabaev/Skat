@@ -6,6 +6,7 @@
     using System.Text;
     using System.Xml;
     using System.Xml.XPath;
+    using System.Xml.Linq;
     using Model;
     using Repository;
 
@@ -16,14 +17,20 @@
             this.Logger = logger;
             this.SupplierRepository = new SupplierRepository();
             this.ClientRepository = new ClientRepository();
+            this.WayBillRepository = new WayBillRepository();
             this.FileContent = Encoding.GetEncoding("windows-1251").GetString(bytes.ToArray());
             this.XmlDocument = new XmlDocument();
             this.XmlDocument.LoadXml(this.FileContent);
             this.XmlRoot = this.XmlDocument.DocumentElement;
         }
 
-
-
+        public XMLConverter(Logger logger)
+        {
+            this.SupplierRepository = new SupplierRepository();
+            this.ClientRepository = new ClientRepository();
+            this.WayBillRepository = new WayBillRepository();
+            this.Logger = logger;
+        }
         /// <summary>
         /// Парсит полученный текст XML и возвращает объект накладной.
         /// </summary>
@@ -221,11 +228,64 @@
             return str.Trim(' ');
         }
 
+        public XDocument GetXmlAll()
+        {
+            XDocument xDoc = new XDocument();
+            XElement document = new XElement(XmlParser.XmlTagNames[XmlTags.Document]);
+            document.Add(this.GetXmlWaybills());
+            xDoc.Add(document);
+            return xDoc;
+        }
+
+        private XElement GetXmlWaybills()
+        {
+            XElement waybills = new XElement(XmlParser.XmlTagNames[XmlTags.WayBills]);
+
+            foreach (var item in this.WayBillRepository.GetAllEntities())
+            {
+                XElement waybill = new XElement(XmlParser.XmlTagNames[XmlTags.WayBill]);
+                XElement code = new XElement(XmlParser.XmlTagNames[XmlTags.Code], item.ExCode);
+                XElement number = new XElement(XmlParser.XmlTagNames[XmlTags.Number], item.Number);
+
+                string supCode = string.Empty;
+
+                try
+                {
+                    supCode = this.SupplierRepository.GetEntity(item.SupplierID).ExCode;
+                }
+                catch(NullReferenceException)
+                {
+                    this.Logger.WriteLog(string.Format("Supplier with ID: {0} not found.", item.SupplierID));
+                }
+                
+                XElement supplierCode = new XElement(XmlParser.XmlTagNames[XmlTags.SupplierCode], supCode);
+
+                string clCode = string.Empty;
+                try
+                {
+                    clCode = this.ClientRepository.GetEntity(item.ClientID).ExCode;
+                }
+                catch (NullReferenceException)
+                {
+                    this.Logger.WriteLog(string.Format("Client with ID: {0} not found.", item.ClientID));
+                }
+
+                XElement clientCode = new XElement(XmlParser.XmlTagNames[XmlTags.ClientCode], clCode);
+                XElement documentDate = new XElement(XmlParser.XmlTagNames[XmlTags.DocumentDate], item.DocumentDate.ToString("yyyy-MM-dd"));
+                XElement downloadDate = new XElement(XmlParser.XmlTagNames[XmlTags.DownloadDate], item.DownloadDate.ToString("yyyy-MM-dd hh:mm:ss"));
+                waybill.Add(code, number, supplierCode, clientCode, documentDate, downloadDate);
+                waybills.Add(waybill);
+            }
+
+            return waybills;
+        }
+
         private Logger Logger { get; set; }
         private string FileContent { get; set; }
         private XmlDocument XmlDocument { get; set; }
         private XmlElement XmlRoot { get; set; }
         private SupplierRepository SupplierRepository { get; set; }
         private ClientRepository ClientRepository { get; set; }
+        private WayBillRepository WayBillRepository { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using System.Xml.Linq;
     using System.Collections.Generic;
     using Repository;
     using XML;
@@ -119,6 +120,24 @@
             {
                 this.Logger.WriteLog(string.Format("{0}: {1}: {2}. {3}", "Error downloading trade objects", ex.Source, ex.Message, ex.StackTrace), LogTypes.WARNING);
             }
+        }
+
+        public void UnloadAll()
+        {
+            try
+            {
+                this.UnloadWayBills();
+            }
+            catch(UnauthorizedAccessException ex)
+            {
+                this.Logger.WriteLog(string.Format("{0}: {1}, {2}: {3}", "Not enough permissions to create a file", ex.Source, ex.Message, ex.StackTrace), LogTypes.ERROR);
+            }      
+        }
+
+        private void UnloadWayBills()
+        {        
+            XMLConverter converter = new XMLConverter(this.Logger);
+            converter.GetXmlAll().Save(Path.Combine(this.ExchangeFolder, this.UploadFileName));
         }
 
         /// <summary>
