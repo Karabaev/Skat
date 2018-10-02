@@ -108,22 +108,22 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.settingsToolStripMenuItem.Text = "Натройки";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.reportsToolStripMenuItem.Text = "Отчеты";
             this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
             // exchangeToolStripMenuItem
             // 
             this.exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
-            this.exchangeToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.exchangeToolStripMenuItem.Text = "Exchange";
+            this.exchangeToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.exchangeToolStripMenuItem.Text = "Обмен";
             this.exchangeToolStripMenuItem.Click += new System.EventHandler(this.exchangeToolStripMenuItem_Click);
             // 
             // tabControl1
@@ -167,7 +167,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(768, 385);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Trade objects";
+            this.tabPage1.Text = "Торговые объекты";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // TOSaveBtn
@@ -362,7 +362,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(768, 385);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Clients";
+            this.tabPage2.Text = "Клиенты";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // ClientsSaveBtn
@@ -502,7 +502,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(768, 385);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Suppliers";
+            this.tabPage3.Text = "Поставщики";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // SuppliersChangeBtn
@@ -640,7 +640,7 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(768, 385);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Waybills";
+            this.tabPage4.Text = "Накладные";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // WayBillsTbl
@@ -664,7 +664,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "NewMainForm";
-            this.Text = "General";
+            this.Text = "Главная форма";
             this.Load += new System.EventHandler(this.NewMainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

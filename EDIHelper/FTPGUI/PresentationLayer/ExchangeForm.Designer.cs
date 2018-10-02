@@ -113,7 +113,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox2.Controls.Add(this.DownloadBtn);
-            this.groupBox2.Location = new System.Drawing.Point(441, 12);
+            this.groupBox2.Location = new System.Drawing.Point(316, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(298, 156);
             this.groupBox2.TabIndex = 6;
@@ -134,11 +134,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 470);
+            this.ClientSize = new System.Drawing.Size(627, 177);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ExchangeForm";
-            this.Text = "Exchange";
+            this.Text = "Форма обмена";
             this.Load += new System.EventHandler(this.ExchangeForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
