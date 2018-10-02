@@ -29,6 +29,7 @@
             this.SupplierRepository = new SupplierRepository();
             this.ClientRepository = new ClientRepository();
             this.WayBillRepository = new WayBillRepository();
+            this.AccumRegisterRepository = new AccumRegisterRepository();
             this.Logger = logger;
         }
         /// <summary>
@@ -208,7 +209,7 @@
                 }
                 catch(NullReferenceException)
                 {
-                    this.Logger.WriteLog(string.Format("Client with ExCode: {0} not found. Trade object: {2} not loaded.", clientCode, name), LogTypes.WARNING);
+                    this.Logger.WriteLog(string.Format("Client with ExCode: {0} not found. Trade object: {1} not loaded.", clientCode, name), LogTypes.WARNING);
                     continue;
                 }
 
@@ -231,23 +232,31 @@
         public XDocument GetXmlAll()
         {
             XDocument xDoc = new XDocument();
-
-           
             XElement document = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Document]);
-           
-            document.Add(this.GetXmlWaybills());
+            document.Add(this.GetXmlWaybills(this.WayBillRepository.GetAllEntities()), this.GetXmlAccumulation(this.AccumRegisterRepository.GetAllEntities()));
             xDoc.Add(document);
             return xDoc;
         }
 
-        private XElement GetXmlWaybills()
+        public XDocument GetXmlAllToPeriod(DateTime beginDate, DateTime endDate)
+        {
+            XDocument xDoc = new XDocument();
+            XElement document = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.Document]);
+            List<Waybill> waybills = this.WayBillRepository.GetAllEntities().Where(wb => wb.DownloadDate > beginDate && wb.DownloadDate < endDate).ToList();
+            List<AccumulationRegister> registerRecords = this.AccumRegisterRepository.GetAllEntities().Where(rr => rr.DateTime > beginDate && rr.DateTime < endDate).ToList();
+            document.Add(this.GetXmlWaybills(waybills), this.GetXmlAccumulation(registerRecords));
+            xDoc.Add(document);
+            return xDoc;
+        }
+
+        private XElement GetXmlWaybills(List<Waybill> waybillList)
         {
             XElement waybills = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.WayBills]);
 
-            foreach (var item in this.WayBillRepository.GetAllEntities())
+            foreach (var item in waybillList)
             {
                 XElement waybill = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.WayBill]);
-                XElement code = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Code], item.ExCode);
+                XElement code = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Code], item.ID);
                 XElement number = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.Number], item.Number);
 
                 string supCode = string.Empty;
@@ -283,6 +292,39 @@
             return waybills;
         }
 
+        private XElement GetXmlAccumulation(List<AccumulationRegister> accumRegList)
+        {
+            XElement records = new XElement(XNamespace + XmlParser.XmlTagNames[XmlTags.RegisterRecords]);
+
+            foreach (var item in accumRegList)
+            {
+                XElement record = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.RegisterRecord]);
+                XElement code = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.Code], item.ID);
+                XElement wayBillCode = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.WayBillCode], item.WaybillID);
+
+                string clCode = string.Empty;
+                try
+                {
+                    clCode = this.ClientRepository.GetEntity(item.ClientID).ExCode;
+                }
+                catch (NullReferenceException)
+                {
+                    this.Logger.WriteLog(string.Format("Client with ID: {0} not found.", item.ClientID));
+                }
+                XElement clientCode = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.ClientCode], clCode);
+
+                XElement roaming = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.Roaming], item.IsRoaming);
+                XElement totalAmount = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.TotalAmount], item.TotalAmount);
+                XElement roamingAmount = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.RoamingAmount], item.RoamingAmount);
+                XElement dateTime = new XElement(this.XNamespace + XmlParser.XmlTagNames[XmlTags.DateTime], item.DateTime.ToString("yyyy-MM-dd hh:mm:ss"));
+                record.Add(code, wayBillCode, clientCode, roaming, totalAmount, roamingAmount, dateTime);
+                records.Add(record);
+            }
+            return records;
+        }
+
+ 
+
         private Logger Logger { get; set; }
         private string FileContent { get; set; }
         private XmlDocument XmlDocument { get; set; }
@@ -291,5 +333,6 @@
         private SupplierRepository SupplierRepository { get; set; }
         private ClientRepository ClientRepository { get; set; }
         private WayBillRepository WayBillRepository { get; set; }
+        private AccumRegisterRepository AccumRegisterRepository { get; set; }
     }
 }

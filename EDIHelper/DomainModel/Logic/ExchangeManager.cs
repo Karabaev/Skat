@@ -126,7 +126,8 @@
         {
             try
             {
-                this.UnloadWayBills();
+                XMLConverter converter = new XMLConverter(this.Logger);
+                converter.GetXmlAll().Save(Path.Combine(this.ExchangeFolder, this.UploadFileName));
             }
             catch(UnauthorizedAccessException ex)
             {
@@ -134,10 +135,17 @@
             }      
         }
 
-        private void UnloadWayBills()
-        {        
-            XMLConverter converter = new XMLConverter(this.Logger);
-            converter.GetXmlAll().Save(Path.Combine(this.ExchangeFolder, this.UploadFileName));
+        public void UnloadToPeriod(DateTime begin, DateTime end)
+        {
+            try
+            {
+                XMLConverter converter = new XMLConverter(this.Logger);
+                converter.GetXmlAllToPeriod(begin, end).Save(Path.Combine(this.ExchangeFolder, this.UploadFileName));
+            }
+            catch(UnauthorizedAccessException ex)
+            {
+                this.Logger.WriteLog(string.Format("{0}: {1}, {2}: {3}", "Not enough permissions to create a file", ex.Source, ex.Message, ex.StackTrace), LogTypes.ERROR);
+            }
         }
 
         /// <summary>

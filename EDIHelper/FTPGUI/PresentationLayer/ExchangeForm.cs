@@ -18,6 +18,9 @@
             Settings settings = SettingsContainer.GetSettings();
             this.Logger = new Logger(string.Format("{0}.{1}", "Exchange", "log"), "Exchange");
             this.ExchangeManager = new ExchangeManager(settings.DownloadExchangeFileName, settings.UploadExchangeFileName, settings.ExchangeFolder, this.Logger);
+            BeginDate.Value = DateTime.Now.AddDays(-1);
+            EndDate.Value = DateTime.Now;
+            FullUnloadChk.Checked = false;
         }
 
         private void DownloadBtn_Click(object sender, EventArgs e)
@@ -44,7 +47,16 @@
         {
             try
             {
-                this.ExchangeManager.UnloadAll();
+                if(FullUnloadChk.Checked)
+                {
+                    this.ExchangeManager.UnloadAll();
+                }   
+                else
+                {
+                    DateTime begin = this.GetDayBeginning(BeginDate.Value);
+                    DateTime end = this.GetDayEnding(EndDate.Value);
+                    this.ExchangeManager.UnloadToPeriod(begin, end);
+                }
             }
             catch(Exception ex)
             {
@@ -53,6 +65,16 @@
                 return;
             }
             MessageBox.Show("Success!", "Success");
+        }
+
+        private DateTime GetDayBeginning(DateTime date)
+        {
+            return date.Date;
+        }
+
+        private DateTime GetDayEnding(DateTime date)
+        {
+            return this.GetDayBeginning(date).AddDays(1).AddTicks(-1);
         }
 
         private Logger Logger { get; set; }

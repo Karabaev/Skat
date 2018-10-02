@@ -5,7 +5,7 @@ namespace ModelTest
 {
     using DomainModel.Model;
     using DomainModel.Repository;
-
+    using DomainModel.Logic;
     [TestClass]
     public class ClientTest
     {
@@ -23,6 +23,12 @@ namespace ModelTest
             ClientRepository repos = new ClientRepository();
             Client client = repos.GetEntity(1);
             Console.WriteLine(client);
+        }
+
+        [TestMethod]
+        public void Test()
+        {
+            ManagerFtp ftp = new ManagerFtp("ftp://192.168.5.5", true, 30, new Logger("TestLog.log", ""));
         }
     }
 }

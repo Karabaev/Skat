@@ -6,7 +6,7 @@
     public class Waybill : IEntity
     {
         public int ID { get; set; }
-        public string ExCode { get; set; }
+      //  public string ExCode { get; set; }
         public string Number { get; set; }
         public int SupplierID { get; set; }
         public int ClientID { get; set; }

@@ -64,13 +64,10 @@
   <ItemGroup>
     <Compile Include="Logic\ExchangeManager.cs" />
     <Compile Include="Logic\WBService.cs" />
-    <Compile Include="Logic\XML\EDIDocumentStruct.cs" />
     <Compile Include="Logic\Logger.cs" />
     <Compile Include="Logic\LogTypes.cs" />
     <Compile Include="Logic\ManagerFtp.cs" />
     <Compile Include="Logic\SettingsContainer.cs" />
-    <Compile Include="Logic\XML\WarePosition.cs" />
-    <Compile Include="Logic\XML\WayBillDocument.cs" />
     <Compile Include="Logic\XML\XMLConverter.cs" />
     <Compile Include="Logic\XML\XmlParser.cs" />
     <Compile Include="Model\AccumulationRegister.cs" />

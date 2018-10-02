@@ -43,3 +43,4 @@ C:\Доработки\EDIHelper\FTPGUI\obj\Release\FTPGui.csproj.CopyComplete
 C:\Доработки\EDIHelper\FTPGUI\obj\Release\FTPDownloader.exe
 C:\Доработки\EDIHelper\FTPGUI\obj\Release\FTPDownloader.pdb
 C:\Доработки\EDIHelper\FTPGUI\obj\Release\FTPGui.PresentationLayer.ReportForm.resources
+C:\Доработки\EDIHelper\FTPGUI\obj\Release\FTPGui.PresentationLayer.ExchangeForm.resources

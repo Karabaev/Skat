@@ -35,7 +35,13 @@
         Number,
         SupplierCode,
         DocumentDate,
-        DownloadDate
+        DownloadDate,
+        RegisterRecords, // блок записей из регистра накопления.
+        RegisterRecord, // зпись из регистра накопления.
+        WayBillCode, // код накладной в записи регистра
+        TotalAmount, // общее количество накладных
+        RoamingAmount, // количество роуминговых накладных
+        DateTime // дата/время записи
     }
 
     public static class XmlParser
@@ -73,6 +79,12 @@
             XmlParser.XmlTagNames.Add(XmlTags.SupplierCode, XmlTags.SupplierCode.ToString());
             XmlParser.XmlTagNames.Add(XmlTags.DocumentDate, XmlTags.DocumentDate.ToString());
             XmlParser.XmlTagNames.Add(XmlTags.DownloadDate, XmlTags.DownloadDate.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.RegisterRecords, XmlTags.RegisterRecords.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.RegisterRecord, XmlTags.RegisterRecord.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.WayBillCode, XmlTags.WayBillCode.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.TotalAmount, XmlTags.TotalAmount.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.RoamingAmount, XmlTags.RoamingAmount.ToString());
+            XmlParser.XmlTagNames.Add(XmlTags.DateTime, XmlTags.DateTime.ToString());
         }
 
         public static XmlElement GetXmlNode(XmlElement curNode, XmlTags tag, int entranceNumber = 0)
