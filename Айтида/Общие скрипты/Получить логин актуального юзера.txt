@@ -1,0 +1,1 @@
+гюопня("SELECT SUSER_SNAME()")
